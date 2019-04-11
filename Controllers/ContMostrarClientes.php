@@ -10,21 +10,17 @@ require_once("../views/MostrarCliente.php");
    <tr>
    <th>Nombre</th>
    <th>Apellidos</th>
-   <th>Correo</th>
-   <th>Dirección</th>
    <th>Teléfono</th>
    </tr>";
    for ($i = 0; $i < count($row); $i++) {
        echo '<tr style="width:20%">';
-       echo '<td style="width:20%px">' . $row[$i]['nombre_cliente'] . "</td>";
+       echo '<td style="width:20%">' . $row[$i]['nombre_cliente'] . "</td>";
        echo '<td style="width:20%">' . $row[$i]['apellido_cliente'] . "</td>";
-       echo '<td style="width:20%">' . $row[$i]['correo'] . "</td>";
-       echo '<td style="width:20%">' . $row[$i]['direccion'] . "</td>";
        echo '<td style="width:20%">' . $row[$i]['telefono'] . "</td>";
+       echo '<td style="width:20%"><input type="submit" value="Ver Detalles"></td>';
        echo "</tr>";
    }
    echo "</table>";
    echo "</div>";
-
 
 ?>
