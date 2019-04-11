@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8_unicode_ci ;
 CREATE TABLE `cliente` (
   `id_cliente` int(15) NOT NULL AUTO_INCREMENT,
   `nombre_cliente` varchar(50) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE `cliente` (
   `direccion` varchar(180) DEFAULT NULL,
   `telefono` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_unicode_ci  COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `fase`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8_unicode_ci ;
 CREATE TABLE `fase` (
   `id_fase` int(15) NOT NULL AUTO_INCREMENT,
   `nombre_fase` varchar(20) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `fase` (
   PRIMARY KEY (`id_fase`),
   KEY `usuario` (`usuario`),
   CONSTRAINT `fase_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_unicode_ci COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `garantia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8_unicode_ci ;
 CREATE TABLE `garantia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fecha_creacion` date DEFAULT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE `garantia` (
   CONSTRAINT `garantia_ibfk_1` FOREIGN KEY (`fase`) REFERENCES `fase` (`id_fase`),
   CONSTRAINT `garantia_ibfk_2` FOREIGN KEY (`cliente`) REFERENCES `cliente` (`id_cliente`),
   CONSTRAINT `garantia_ibfk_3` FOREIGN KEY (`maquinaria`) REFERENCES `maquinaria` (`id_maquinaria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_unicode_ci COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `maquinaria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8_unicode_ci;
 CREATE TABLE `maquinaria` (
   `id_maquinaria` int(15) NOT NULL AUTO_INCREMENT,
   `modelo` varchar(50) DEFAULT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE `maquinaria` (
   `marca` varchar(80) DEFAULT NULL,
   `fecha_de_compra` date DEFAULT NULL,
   PRIMARY KEY (`id_maquinaria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8_unicode_ci COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +137,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = utf8_unicode_ci ;
 CREATE TABLE `usuario` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE `usuario` (
   `apellido` varchar(80) NOT NULL,
   `rol` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8_unicode_ci COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
