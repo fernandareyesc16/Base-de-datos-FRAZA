@@ -12,10 +12,13 @@
       </div>
       <div>
           <input type="text" class="textbox" id="txt_modelo" name="txt_modelo" placeholder="Modelo" />
-          <input type="text" class="textbox" id="txt_" name="txt_apellido" placeholder="Apellidos" />
+          
       </div>
       <div>
-          <input type="text" class="textbox" id="txt_correo" name="txt_correo" placeholder="Correo" />
+          <input type="text" class="textbox" id="txt_numero_de_serie" name="txt_numero_de_serie" placeholder="Numero de Serie" />
+      </div>
+      <div>
+          <input type="text" class="textbox" id="txt_marca" name="txt_marca" placeholder="Marca" />
       </div>
       <div>
           <input type="date" class="textbox" id="date_fecha_de_compra" name="date_fecha_de_compra" placeholder="Fecha de Compra" />
