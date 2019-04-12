@@ -1,4 +1,4 @@
-<?php
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -11,4 +11,3 @@
   </form>
   </body>
   </html>
-?>

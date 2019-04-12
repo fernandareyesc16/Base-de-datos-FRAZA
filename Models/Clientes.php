@@ -9,7 +9,7 @@ class Clientes{
 
     public function __construct(){
         $this->cliente = array();
-        $this->db = new PDO('mysql:host=localhost;dbname=frazagarantias', "root", "YanJack67#");
+        $this->db = new PDO('mysql:host=localhost;dbname=fraza_garantias', "root", "");
     }
 
     private function setNames() {
