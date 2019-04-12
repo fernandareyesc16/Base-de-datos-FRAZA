@@ -1,8 +1,8 @@
 <?php
-require_once("../Models/ContMostrarGarantía.php");
-$garantias = new Garantias();
+require_once("../Models/Garantia1.php");
+$garantias = new Garantia();
 $row = $garantias->getGarantias();
-require_once("../views/Garantia.php");
+require_once("../views/MostrarGarantia.php");
 
    echo '<div style="overflow-x:auto;">';
    echo "<table border ='1' cellspacing='2' cellpadding='10'>

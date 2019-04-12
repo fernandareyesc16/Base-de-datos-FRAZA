@@ -4,7 +4,7 @@ class Garantia{
     private $db;
     public function __construct(){
         $this->garantia = array();
-        $this->db = new PDO('mysql:host=localhost;dbname=dbname', "root", "");
+        $this->db = new PDO('mysql:host=localhost;dbname=fraza_garantias', "root", "");
     }
     private function setNames() {
       return $this->db->query("SET NAMES 'utf8'");
