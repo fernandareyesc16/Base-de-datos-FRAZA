@@ -1,0 +1,8 @@
+<?php
+
+require_once("../Models/DetallesCliente.php");
+$garantias = new DetallesCliente();
+$row = $detallescliente->updateDetallesCliente();//llamar update de mysql 
+require_once("../views/DetallesCliente.php");
+
+?>
