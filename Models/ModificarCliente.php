@@ -1,9 +1,9 @@
 <?php
-class ModificarsCliente{
+class ModificarCliente{
     private $detallesCliente;
     private $db;
     public function __construct(){
-        $this->garantia = array();
+        $this->detallesCliente = array();
         $this->db = new PDO('mysql:host=localhost;dbname=fraza_g', "root", "ferreyesc");
     }
     private function setNames() {
