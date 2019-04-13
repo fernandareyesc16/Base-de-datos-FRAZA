@@ -2,7 +2,7 @@
 require_once("../Models/Maquinaria.php");
 $maquinaria = new Maquinaria();
 $row = $maquinaria->getDetalleMaquinaria(3);
-require_once("../views/MostrarMaquinaria.php");
+require_once("../views/DetallesMaquinaria.php");
 
 
    echo '<div style="overflow-x:auto;">';
