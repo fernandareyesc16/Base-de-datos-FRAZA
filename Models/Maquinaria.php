@@ -18,7 +18,20 @@ class Maquinaria{
         return $this->maquinaria;
         $this->db = null;
     }
-    public function setCliente($modelo, $numero_de_serie, $marca, $fecha_de_compra) {
+
+    public function getDetalleMaquinaria($id_de_maquinaria){
+        self::setNames();
+        $sql = "SELECT modelo, numero_de_serie, marca, fecha_de_compra FROM maquinaria WHERE id_maquinaria = $id_de_maquinaria" ;
+        foreach ($this->db->query($sql) as $res) {
+            $this->maquinaria[] = $res;
+        }
+        return $this->maquinaria;
+        $this->db = null;
+
+
+    }
+
+    public function setMaquinaria($modelo, $numero_de_serie, $marca, $fecha_de_compra) {
         self::setNames();
           $sql = "INSERT INTO maquinaria(modelo, numero_de_serie, marca, fecha_de_compra) 
           VALUES ('" . $modelo . "', '" . $numero_de_serie . "','" . $marca . "', '" . $fecha_de_compra . "')";
