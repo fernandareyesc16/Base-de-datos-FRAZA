@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Fraza</title>
-	
+
 <link href="css/style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	
+
 	<section id="slide2">
 <form  method="post" name="form"  >
 Username : <input type="text" name="username"><br><br>

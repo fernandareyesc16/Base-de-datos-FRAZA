@@ -4,22 +4,38 @@
     <title> Agregar Garantia</title>
   </head>
   <body>
-      <form name='form' method='post'>
+      <form action="../Controllers/ContAgregarGarantia.php" name='form' method='post'>
 
       <div>
-        <h1>Agregar Garantia</h1>
+        <h1>Agregar Garantía</h1>
+        <div>
+       <h2>Datos de Maquinaria: </h2>
+     </div>
+     <div>
+         <input type="text" class="textbox" id="txt_modelo" name="txt_modelo" placeholder="Modelo" />
+
+     </div>
+     <div>
+         <input type="text" class="textbox" id="txt_numero_de_serie" name="txt_numero_de_serie" placeholder="Numero de Serie" />
+     </div>
+     <div>
+         <input type="text" class="textbox" id="txt_marca" name="txt_marca" placeholder="Marca" />
+     </div>
+
+
       </div>
+    <h2>Datos adicionales: </h2>
       <div>
           <input type="text" class="textbox" id="txt_cliente" name="txt_cliente" placeholder="Cliente" />
-          <input type="text" class="textbox" id="txt_fecha_creacion" name="txt_fecha_creacion" placeholder="Fecha de creación" />
+          <input type="text" class="textbox" id="txt_apellido" name="txt_apellido" placeholder="Apellidos" />
+
       </div>
+
       <div>
-          <input type="text" class="textbox" id="txt_monto_total" name="txt_monto_total" placeholder="Monto total" />
+
+          Fecha de terminación: <input type="date" class="textbox" id="txt_fecha_terminacion" name="txt_fecha_terminacion" placeholder="fecha de terminación" />
       </div>
-      <div>
-          <input type="text" class="textbox" id="txt_maquinaria" name="txt_maquinaria" placeholder="Maquinaria" />
-          <input type="text" class="textbox" id="txt_fase" name="txt_fase" placeholder="Fase" />
-      </div>
+
       <div>
           <input type="submit" name="but_submit" value = "Agregar" />
       </div>

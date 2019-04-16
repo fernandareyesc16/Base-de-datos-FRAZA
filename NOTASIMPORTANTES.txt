@@ -1,0 +1,10 @@
+NOTAS IMPORTANTES: 
+1.cambié la base base de datos otra vez, así que tienen que volver a restorearla. 
+2. Hay que cambiar otra vez el relational model y el E.R diagram. 
+3. La tabla "usuario" cambió por "empleados".
+
+Validaciones por hacer:
+1. No se pueden insertar clientes en blanco
+2. No se pueden insertar usuarios en blanco
+3. Si el cliente no existe, la garantia no se puede insertar;
+4. Si el empleado no existe, al agregar una fase debe mandar un mensaje de que noe existe. 
