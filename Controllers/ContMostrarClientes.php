@@ -1,7 +1,8 @@
 <?php
-require_once("../Models/Clientes.php");
-$clientes = new Clientes();
-$row = $clientes->getClientes();
+require_once("../Models/cfg.php");
+require_once("../Models/Crud.php");
+$new= new Crud($username, $contrasena);
+$row = $new->getData("SELECT * FROM cliente");
 require_once("../Views/MostrarClientes.php");
 
 echo '<div style="overflow-x:auto;">';

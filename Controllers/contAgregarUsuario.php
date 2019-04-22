@@ -1,10 +1,26 @@
 <?php
+
 require_once("../Views/AgregarUsuario.php");
+
+
   if(isset($_POST['but_submit'])){
-    require_once("../Models/Usuario.php");
-    $nuevo = new Usuario();
-    $asd = $nuevo->setUsuario($_POST['nombre'], $_POST['apellido'],$_POST['username'], $_POST['rol']);
-    echo "Usuario agregado exitosamente";
-    echo "<form action='../Controllers/homepage.html'><input type='submit' name='but_regresar' value = 'Regresar' /></form>";
+    $nombreE = $_POST['nombre'];
+    $apellidoE= $_POST['apellido'];
+    $rolE = $_POST['rol'];
+    $usernameE = $_POST['username'];
+    $contrasenaE = $_POST['password'];
+
+      require_once("../Models/Crud.php");
+      $nuevo = new Crud();
+      $insertaUsuario = $nuevo->execute("INSERT INTO empleado (nombre, apellido, rol, username) VALUES('$nombreE', '$apellidoE', '$rolE', '$usernameE')");
+      $sql ="CREATE USER '$usernameE'@'localhost' IDENTIFIED BY '$contrasenaE'";
+      $nuevoUsuario = $nuevo->execute($sql);
+      $sql1= "GRANT 'empleado' TO '$usernameE'@'localhost'";
+      $nuevo->execute($sql1);
+      $sql2= "SET DEFAULT rol empleado to '$usernameE'@'localhost'";
+      $nuevo->execute($sql2);
+      echo "Empleado agregado exitosamente";
+      echo "<form action='../Controllers/homepage.html'><input type='submit' name='but_regresar' value = 'Regresar' /></form>";
+
 }
 ?>

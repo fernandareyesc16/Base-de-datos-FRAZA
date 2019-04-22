@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+session_start();
+ ?>
 <html>
 <head>
 <meta charset="utf-8">
@@ -14,10 +17,12 @@
 <body>
 
 	<section id="slide2">
-<form  method="post" name="form"  >
-Username : <input type="text" name="username"><br><br>
-Password : <input type="password" name="password"><br><br>
-<input type="submit" name="but_submit" value="submit" id="login">
+<form  method="post" name="form" action="../Models/SessionConfig.php">
+	<h1>Garantías Fraza Ingreso</h1>
+Usuario : <input type="text" name="usuario"><br><br>
+Contraseña : <input type="password" name="contrasena"><br><br>
+
+<input type="submit" name="but_submit" value="Ingresar">
 </form>
 	</section>
     </body>

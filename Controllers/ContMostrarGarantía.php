@@ -1,7 +1,8 @@
 <?php
+require_once("../Models/cfg.php");
 require_once("../Models/Crud.php");
 require_once("../Views/MostrarGarantia.php");
-$crud = new Crud();
+$crud = new Crud($username,$contrasena);
 
   $rows = $crud->getData("SELECT * from garantia");
    echo '<div style="overflow-x:auto;">';

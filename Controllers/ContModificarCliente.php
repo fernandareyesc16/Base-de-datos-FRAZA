@@ -1,18 +1,19 @@
 <?php
-require_once("../Models/Clientes.php");
-$cliente = new Clientes();
-$id_cliente = $_GET['id_cliente'];
-$row = $cliente->buscarCliente($id_cliente);
+require_once("../Models/cfg.php");
+require_once("../Models/Crud.php");
+$cliente = new Crud($username,$contrasena);
+$id_cliente = intval($_GET['id_cliente']);
+$row = $cliente->getData("SELECT * FROM cliente WHERE id_cliente=$id_cliente");
 
-for ($i = 0; $i < count($row); $i++){
-  $nombre_cliente = $row[$i]['nombre_cliente'];
-  $apellido_cliente = $row[$i]['apellido_cliente'];
-  $correo = $row[$i]['correo'];
-  $direccion = $row[$i]['direccion'];
-  $telefono = $row[$i]['telefono'];
+//print_r( $row);
+foreach ($row as $res){
+  $nombre_cliente = $res['nombre_cliente'];
+  $apellido_cliente = $res['apellido_cliente'];
+  $correo = $res['correo'];
+  $direccion = $res['direccion'];
+  $telefono = $res['telefono'];
 }
 
 require_once("../Views/ModificarCliente.php");
 
 ?>
- 

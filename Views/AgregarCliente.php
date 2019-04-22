@@ -11,8 +11,8 @@
         <h1>Agregar Cliente </h1>
       </div>
       <div>
-          <input type="text" class="textbox" id="txt_nombre" name="txt_nombre" placeholder="Nombre" />
-          <input type="text" class="textbox" id="txt_apellido" name="txt_apellido" placeholder="Apellidos" />
+          <input type="text" class="textbox" id="txt_nombre" name="txt_nombre" placeholder="Nombre" required/>
+          <input type="text" class="textbox" id="txt_apellido" name="txt_apellido" placeholder="Apellidos" required/>
       </div>
       <div>
           <input type="text" class="textbox" id="txt_correo" name="txt_correo" placeholder="Correo" />

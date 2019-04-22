@@ -1,12 +1,11 @@
 
 <?php
-
+require_once("../Models/cfg.php");
+require_once("../Models/Crud.php");
 $id_garantia = $_GET['id_garantia'];
 include_once ("../Models/Crud.php");
 
-$crud = new Crud();
-
-echo "Entro";
+$crud = new Crud($username, $contrasena);
 
 if (isset($_POST['Guardar'])) {
 

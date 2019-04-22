@@ -1,6 +1,7 @@
 <?php
+require_once("../Models/cfg.php");
 require_once("../Models/Crud.php");
-$crud = new Crud();
+$crud = new Crud($username, $contrasena);
 $noSerie = $_GET['id_maquinaria'];
 $id_garantia = $_GET['id_garantia'];
 
@@ -14,9 +15,6 @@ if(is_array($row)){
     $marca = $res['marca'];
   }
 }
-
-
-echo "Entro a query";
 
 $rows = $crud->getData("SELECT nombre_fase,empleado_encargado,fecha_inicio,duracion,comentario from fase_garantia,fase where fase_garantia.id_fase = fase.id_fase and fase_garantia.id_garantia = $id_garantia");
 
