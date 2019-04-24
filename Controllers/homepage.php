@@ -99,15 +99,17 @@ http://www.tooplate.com/view/2082-pure-mix
 
 <!-- Homepage
 ================================================== -->
-<section id="headerHome" class="header-twoH">
+<section id="header" class="header-one">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+           
             	<div class="header-thumb2">
               		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Taller Fraza</h1>
-              		
+              		 
            		</div>
+			
                  <a href="../Views/MostrarClientes.php" class="btn btn-default" id="btn-clientes">Clientes</a>
                 <a href="../Views/MostrarGarantia.php" class="btn btn-default" id="btn-garantia">Garantías</a>
                 <a href="../Views/AgregarUsuario.php" class="btn btn-default" id="btn-empleado">Agregar empleado</a>
