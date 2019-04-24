@@ -1,34 +1,154 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Fraza </title>
+<!--
 
-<link href="css/style.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="js/jquery-3.3.1.min.js"> </script>
+Template 2082 Pure Mix
+
+http://www.tooplate.com/view/2082-pure-mix
+
+-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<!-- Site title
+   ================================================== -->
+	<title>Taller Fraza - Agregar Usuario</title>
+
+	<!-- Bootstrap CSS
+   ================================================== -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Animate CSS
+   ================================================== -->
+	<link rel="stylesheet" href="css/animate.min.css">
+
+	<!-- Font Icons CSS
+   ================================================== -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
+
+	<!-- Main CSS
+   ================================================== -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Google web font 
+   ================================================== -->	
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+	
 </head>
-
 <body>
-    <h1>Agregar Empleado </h1>
-<form action = "../Controllers/homepage.php"><input type="submit" name = "but_regresar" value="Regresar" id="reg"></form>
+
+
+<!-- Preloader section
+================================================== -->
+<div class="preloader">
+
+	<div class="sk-spinner sk-spinner-pulse"></div>
+
+</div>
+
+
+<!-- Navigation section
+================================================== -->
+<div class="nav-container">
+   <nav class="nav-inner transparent">
+
+      <div class="navbar">
+         <div class="container">
+            <div class="row">
+
+              <div class="brand">
+                <a href="index.html">Taller Fraza</a>
+              </div>
+
+              <div class="navicon">
+                <div class="menu-container">
+
+                  <div class="circle dark inline">
+                    <i class="icon ion-navicon"></i>
+                  </div>
+
+                  <div class="list-menu">
+                    <i class="icon ion-close-round close-iframe"></i>
+                    <div class="intro-inner">
+                     	<ul id="nav-menu">
+                       <li><a href="../Controllers/homepage.php">Inicio</a></li>
+                       <li><a href="../Views/MostrarClientes.php">Clientes</a></li>
+                        <li><a href="../Views/MostrarGarantia.php">Garantias</a></li>
+                        <li><a href="../Views/AgregarUsuario.php">Agregar empleado</a></li>
+                        <li><a href="../Views/login.php">Cerrar sesión</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+         </div>
+      </div>
+
+   </nav>
+</div>
+
+
+<!-- Header section
+================================================== -->
+<section id="header" class="header-four">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+            	<div class="header-thumb">
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Agregar Empleado</h1>
+              		 
+           		</div>
+			</div>
+
+		</div>
+	</div>		
+</section>
+
+
+<!-- Agregar Empleado
+================================================== -->
+<section id="empleado">
+   <div class="container">
+      <div class="row">
+
+   <form action = "../Controllers/homepage.php"><input type="submit" name = "but_regresar" value="Regresar" id="reg_2"></form>
 
 <section id="slideRegistro" >
 <form  method="post" name="form" >
 
-Nombre : <input type="text" name="nombre"><br><br>
-Apellido : <input type="text" name="apellido"><br><br>
-Rol : <input type="text" name="rol" placeholder= "Empleado o director"><br><br>
-Nombre de Usuario : <input type="text" name="username"><br><br>
-Contraseña : <input type="text" name="password" placeholder="Contraseña"><br><br>
+ <input type="text" name="nombre" id="txt_nombre" placeholder="Nombre"><br><br>
+ <input type="text" name="apellido" id="txt_apellido" placeholder="Apellido"><br><br>
+<input id="txt_rol" type="text" name="rol" placeholder= "Empleado o director"><br><br>
+ <input type="text" name="username" id="txt_usuario" placeholder="Nombre de usuario"><br><br>
+ <input id="txt_contra" type="text" name="password" placeholder="Contraseña"><br><br>
 <input type="submit" name = "but_submit" value="Agregar" id="reg">
 
 
 </form>
 
- </section>
+      </div>
+   </div>
+</section>
 
-	    </body>
-  <html>
+
+
+
+
+<!-- Javascript 
+================================================== -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
