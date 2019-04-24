@@ -38,10 +38,10 @@ http://www.tooplate.com/view/2082-pure-mix
    ================================================== -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- Google web font 
-   ================================================== -->	
+	<!-- Google web font
+   ================================================== -->
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
-	
+
 </head>
 <body>
 
@@ -80,7 +80,7 @@ http://www.tooplate.com/view/2082-pure-mix
                     <div class="intro-inner">
                      	<ul id="nav-menu">
                      <li><a href="../Controllers/homepage.php">Inicio</a></li>
-                       <li><a href="../Views/MostrarClientes.php">Clientes</a></li>
+                       <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
                         <li><a href="../Views/MostrarGarantia.php">Garantias</a></li>
                         <li><a href="../Views/AgregarUsuario.php">Agregar empleado</a></li>
                         <li><a href="../Views/login.php">Cerrar sesión</a></li>
@@ -108,12 +108,12 @@ http://www.tooplate.com/view/2082-pure-mix
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
               		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Garantías</h1>
-              		 
+
            		</div>
 			</div>
 
 		</div>
-	</div>		
+	</div>
 </section>
 
 
@@ -136,7 +136,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 
 
-<!-- Javascript 
+<!-- Javascript
 ================================================== -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>

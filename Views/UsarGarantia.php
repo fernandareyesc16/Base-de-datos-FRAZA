@@ -1,7 +1,7 @@
 
-      
-      
-      
+
+
+
       <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,10 +39,10 @@ http://www.tooplate.com/view/2082-pure-mix
    ================================================== -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- Google web font 
-   ================================================== -->	
+	<!-- Google web font
+   ================================================== -->
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
-	
+
 </head>
 <body>
 
@@ -102,19 +102,20 @@ http://www.tooplate.com/view/2082-pure-mix
 
 <!-- Header section
 ================================================== -->
+<?php $id_garantia = $_GET['id_garantia']; ?>
 <section id="header" class="header-four">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Usar garantía               		 <?php echo $id_garantia ?> : insertar datos</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Usar garantía <?php echo $id_garantia ?> : insertar datos</h1>
 
            		</div>
 			</div>
 
 		</div>
-	</div>		
+	</div>
 </section>
 
 
@@ -125,7 +126,7 @@ http://www.tooplate.com/view/2082-pure-mix
       <div class="row">
 
    <form action="../Controllers/ContInsertaFase.php?id_garantia=<?php echo $id_garantia ?>" method="post" name="form1">
-         <h3 id="texto_fase">Fase:</h3> 
+         <h3 id="texto_fase">Fase:</h3>
        <input type="textbox" class="textbox" id="txt_fase" name="txt_fase" placeholder="Escriba una de las fases" />
           <h3 id="txtDos_fase">Inspección, Reparación, Orden de piezas, Espera de piezas, Completada</h3>
       </div>
@@ -158,7 +159,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 
 
-<!-- Javascript 
+<!-- Javascript
 ================================================== -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -167,6 +168,3 @@ http://www.tooplate.com/view/2082-pure-mix
 
 </body>
 </html>
-      
-      
-      

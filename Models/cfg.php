@@ -1,4 +1,5 @@
 <?php
-$username= 'director';
-$contrasena= 'director';
+$username= 'user1';
+$contrasena= 'pass';
+$rol= 'empleado';
 ?>

@@ -3,9 +3,9 @@ include_once 'DbConfig.php';
 
 class Crud extends DbConfig
 {
-    public function __construct($usuario, $contrasena)
+    public function __construct(/*$usuario, $contrasena*/)
     {
-        parent::__construct($usuario, $contrasena);
+    parent::__construct(/*$usuario, $contrasena*/);
 
     }
 

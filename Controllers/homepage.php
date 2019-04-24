@@ -38,10 +38,10 @@ http://www.tooplate.com/view/2082-pure-mix
    ================================================== -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- Google web font 
-   ================================================== -->	
+	<!-- Google web font
+   ================================================== -->
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
-	
+
 </head>
 <body>
 
@@ -64,7 +64,7 @@ http://www.tooplate.com/view/2082-pure-mix
          <div class="container">
             <div class="row">
 
-             
+
 
               <div class="navicon">
                 <div class="menu-container">
@@ -104,27 +104,35 @@ http://www.tooplate.com/view/2082-pure-mix
 		<div class="row">
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
-           
+
             	<div class="header-thumb2">
               		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Taller Fraza</h1>
-              		 
+
            		</div>
-			
-                 <a href="../Views/MostrarClientes.php" class="btn btn-default" id="btn-clientes">Clientes</a>
+
+                 <a href="../Controllers/ContMostrarClientes.php" class="btn btn-default" id="btn-clientes">Clientes</a>
                 <a href="../Views/MostrarGarantia.php" class="btn btn-default" id="btn-garantia">Garantías</a>
-                <a href="../Views/AgregarUsuario.php" class="btn btn-default" id="btn-empleado">Agregar empleado</a>
+                <?php
+
+                if($rol == "director" || $rol == "Director"){
+                  echo '<a href="../Views/AgregarUsuario.php" class="btn btn-default" id="btn-empleado">Agregar empleado</a>';
+                }
+
+                ?>
+
+
                 <a href="../Views/Login.php" class="btn btn-default" id="btn-cerrar">Cerrar sesión</a>
 			</div>
 
 		</div>
-	</div>		
+	</div>
 </section>
 
 
 
 
 
-<!-- Javascript 
+<!-- Javascript
 ================================================== -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
