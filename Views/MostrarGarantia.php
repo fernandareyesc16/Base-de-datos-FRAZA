@@ -123,7 +123,7 @@ http://www.tooplate.com/view/2082-pure-mix
    <div class="container">
       <div class="row">
 
-        <form action = "../Controllers/homepage.php"><input type="submit" value="Regresar" id="regresar_garantias"></form>
+      
         <form action= "../Controllers/ContAgregarGarantia.php"><input type="submit" value="Agregar nueva garantía" id="agregar_garantias"></form>
 
 

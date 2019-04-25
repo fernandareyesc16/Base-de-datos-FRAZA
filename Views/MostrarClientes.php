@@ -120,7 +120,7 @@ http://www.tooplate.com/view/2082-pure-mix
    <div class="container">
       <div class="row">
 
-      <form action= "../Controllers/inicio.php"><input id="regresar-clientes" type="submit" value="Regresar"></form>
+    
       <form action= "../Controllers/ContAgregarCliente.php"><input type="submit" value="Agregar nuevo cliente" id="agregar-clientes"></form>
 
 
