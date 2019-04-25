@@ -5,7 +5,7 @@ $new= new Crud(/*$username, $contrasena*/);
 $row = $new->getData("SELECT * FROM cliente");
 header("Location:../Views/MostrarClientes.php");
 
-echo '<div style="overflow-x:auto;">';
+/*echo '<div style="overflow-x:auto;">';
 echo "<table border ='1' cellspacing='2' cellpadding='10'>
 <tr>
 <th>Nombre</th>
@@ -27,6 +27,6 @@ for ($i = 0; $i < count($row); $i++) {
     }
 
     echo "</tr>";
-  }
+  }*/
 
 ?>

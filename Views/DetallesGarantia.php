@@ -38,10 +38,10 @@ http://www.tooplate.com/view/2082-pure-mix
    ================================================== -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- Google web font 
-   ================================================== -->	
+	<!-- Google web font
+   ================================================== -->
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
-	
+
 </head>
 <body>
 
@@ -79,11 +79,11 @@ http://www.tooplate.com/view/2082-pure-mix
                     <i class="icon ion-close-round close-iframe"></i>
                     <div class="intro-inner">
                      	<ul id="nav-menu">
-                       <li><a href="../Controllers/homepage.php">Inicio</a></li>
-                       <li><a href="../Views/MostrarClientes.php">Clientes</a></li>
-                        <li><a href="../Views/MostrarGarantia.php">Garantias</a></li>
-                        <li><a href="../Views/AgregarUsuario.php">Agregar empleado</a></li>
-                        <li><a href="../Views/login.php">Cerrar sesión</a></li>
+												<li><a href="../Controllers/homepage.php">Inicio</a></li>
+ 											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
+ 												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
+ 												<li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+ 												<li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
                   </div>
@@ -109,12 +109,12 @@ http://www.tooplate.com/view/2082-pure-mix
             	<div class="header-thumb">
               		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Detalles garantía</h1>
                     <h3 class="wow fadeInUp" data-wow-delay="0.9s"> Garantía <?php echo $modelo, " ",  $marca, " ", $numSerie; ?></h3>
-              		 
+
            		</div>
 			</div>
 
 		</div>
-	</div>		
+	</div>
 </section>
 
 
@@ -126,13 +126,13 @@ http://www.tooplate.com/view/2082-pure-mix
 
 
  <form name="form" method="post" action ="../Controllers/ContDetallesGarantia.php"></form>
-     
+
 
     <div>
     <form action="../Controllers/ContMostrarGarantía.php" method="post"><input type="submit" name="Regresar" value="Regresar" id="btn_regr"></form>
     </div>
     <div>
-  
+
     </div>
 
     <?php
@@ -168,7 +168,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 
 
-<!-- Javascript 
+<!-- Javascript
 ================================================== -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>

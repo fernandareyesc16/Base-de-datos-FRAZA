@@ -76,11 +76,11 @@ http://www.tooplate.com/view/2082-pure-mix
                     <i class="icon ion-close-round close-iframe"></i>
                     <div class="intro-inner">
                      	<ul id="nav-menu">
-                       <li><a href="../Controllers/homepage.php">Inicio</a></li>
-                       <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
-                        <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                        <li><a href="../Views/AgregarUsuario.php">Agregar empleado</a></li>
-                        <li><a href="../Views/login.php">Cerrar sesión</a></li>
+												<li><a href="../Controllers/homepage.php">Inicio</a></li>
+ 											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
+ 												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
+ 												<li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+ 												<li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
                   </div>
@@ -119,8 +119,36 @@ http://www.tooplate.com/view/2082-pure-mix
 <section id="clientes">
    <div class="container">
       <div class="row">
+<?php
+require_once("../Models/Crud.php");
+require_once("../Models/cfg.php");
+$new= new Crud(/*$username, $contrasena*/);
+$row = $new->getData("SELECT * FROM cliente");
+				echo '<div style="overflow-x:auto; background-color = #f2f2f2;">';
+				echo "<table border ='1' cellspacing='2' cellpadding='10'>
+				<tr>
+				<th>Nombre</th>
+				<th>Apellidos</th>
+				<th>Correo</th>
+				<th>Dirección</th>
+				<th>Teléfono</th>
+				</tr>";
 
-    
+				for ($i = 0; $i < count($row); $i++) {
+				    echo '<tr style="width:20%">';
+				    echo '<td style="width:20%">' . $row[$i]['nombre_cliente'] . "</td>";
+				    echo '<td style="width:20%">' . $row[$i]['apellido_cliente'] . "</td>";
+				    echo '<td style="width:20%">' . $row[$i]['correo'] . "</td>";
+				    echo '<td style="width:20%">' . $row[$i]['direccion'] . "</td>";
+				    echo '<td style="width:20%">' . $row[$i]['telefono'] . "</td>";
+				    if($rol == "director" || $rol=="Director"){
+				      echo '<td style="width:20%"><a href="../Controllers/ContModificarCliente.php?id_cliente= ' . $row[$i]['id_cliente'] . '">Modificar</a>';
+				    }
+
+				    echo "</tr>";
+				  }
+?>
+
       <form action= "../Controllers/ContAgregarCliente.php"><input type="submit" value="Agregar nuevo cliente" id="agregar-clientes"></form>
 
 
