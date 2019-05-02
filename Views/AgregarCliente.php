@@ -124,17 +124,17 @@ http://www.tooplate.com/view/2082-pure-mix
 
 
       <div id="nombre-apellido">
-          <input type="text" class="textbox" id="txt_nombre" name="txt_nombre" placeholder="Nombre" required/>
-          <input type="text" class="textbox" id="txt_apellido" name="txt_apellido" placeholder="Apellidos" required/>
+          Nombre:<input type="text" class="textbox" id="txt_nombre" name="txt_nombre" placeholder="Nombre" required/>
+          Apellido:<input type="text" class="textbox" id="txt_apellido" name="txt_apellido" placeholder="Apellidos" required/>
       </div>
       <div>
-          <input type="text" class="textbox" id="txt_correo" name="txt_correo" placeholder="Correo" />
+          Correo:<input type="text" class="textbox" id="txt_correo" name="txt_correo" placeholder="Correo" />
       </div>
       <div>
-          <input type="text" class="textbox" id="txt_direccion" name="txt_direccion" placeholder="Dirección" />
+          Dirección:<input type="text" class="textbox" id="txt_direccion" name="txt_direccion" placeholder="Dirección" />
       </div>
       <div>
-          <input type="text" class="textbox" id="txt_telefono" name="txt_telefono" placeholder="Teléfono" />
+         Teléfono<input type="text" class="textbox" id="txt_telefono" name="txt_telefono" placeholder="Teléfono" />
       </div>
       <div>
           <input id="btn_agregar"type="submit" name="but_submit" value = "Agregar" />

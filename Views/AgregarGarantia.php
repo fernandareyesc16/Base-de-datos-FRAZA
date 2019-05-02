@@ -118,6 +118,13 @@ http://www.tooplate.com/view/2082-pure-mix
 
 <!-- Agregar Garantía
 ================================================== -->
+<?php
+require_once("../Models/Crud.php");
+require_once("../Models/cfg.php");
+$crud = new Crud();
+$nombreCliente = $crud->getData("SELECT id_cliente, nombre_cliente, apellido_cliente FROM cliente");
+//$nombreEncargado = $crud->getData("SELECT nombre, apellido from empleado where valido = 1");
+?>
 <section id="Garantías">
    <div class="container">
       <div class="row">
@@ -144,8 +151,15 @@ http://www.tooplate.com/view/2082-pure-mix
       </div>
     <h3 id="txt_titulo">Datos adicionales: </h3>
       <div>
-          <input type="text" class="textbox" id="txt_clienteG" name="txt_cliente" placeholder="Cliente" />
-          <input type="text" class="textbox" id="txt_apellidoG" name="txt_apellido" placeholder="Apellidos" />
+        Cliente: <select name="Cliente">
+          <?php
+              foreach ($nombreCliente as $res) {
+              //while($res = mysqli_fetch_array($result)) {
+                  echo '<option value="'.$res['id_cliente'].'">'.$res['nombre_cliente'].' '.$res['apellido_cliente'].'</option>"';
+                     }
+           ?>
+
+              </select>
 
       </div>
 

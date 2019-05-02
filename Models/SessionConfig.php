@@ -18,7 +18,14 @@ $txt = "\$contrasena= '$password';\r\n";
 fwrite($myfile, $txt);
 
 $sql = $crud->getData("SELECT rol from empleado where username = '$usuario' and contrasena = '$password'");
-if(!empty($sql)){
+$esValido = $crud->getData("SELECT valido from empleado where username = '$usuario' and contrasena = '$password'");
+if(is_array($esValido)){
+  foreach ($esValido as $res){
+    $valido = $res['valido'];
+  }
+}
+
+if(!empty($sql) && $valido==1 ){
   if(is_array($sql)){
     foreach ($sql as $res){
       $rol = $res['rol'];
@@ -26,6 +33,8 @@ if(!empty($sql)){
     header("Location:../Controllers/ContLogin.php");
   }
 
+}elseif(!empty($sql) && $valido!=1){
+  header("Location: ../Views/EmpleadoInvalido.php");
 }else{
   header("Location: ../Views/ErrorLogin.php");
 }

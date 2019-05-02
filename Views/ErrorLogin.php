@@ -23,19 +23,19 @@
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
 
    </head>
-<body>     
-        
+<body>
+
 <?php
-echo '<h1 style=" 
+echo '<h1 style="
       position:relative;
       right:-40px;
-    font-size: 32px; 
+    font-size: 32px;
     color: #ffc299;"> Usuario o contraseña incorrectos  <h1>'
 
  ?>
-    
-   
+
+
     <a href="../Views/login.php" class="btn btn-default" id="btn_regresar">regresar</a>
-     
+
 </body>
 </html>

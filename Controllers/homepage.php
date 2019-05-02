@@ -115,7 +115,7 @@ http://www.tooplate.com/view/2082-pure-mix
                 <?php
 
                 if($rol == "director" || $rol == "Director"){
-                  echo '<a href="../Views/AgregarUsuario.php" class="btn btn-default" id="btn-empleado">Agregar empleado</a>';
+                  echo '<a href="../Controllers/ContMostrarUsuarios.php" class="btn btn-default" id="btn-empleado">Empleados</a>';
                 }
 
                 ?>

@@ -12,7 +12,7 @@ require_once("../Views/AgregarCliente.php");
 
       require_once("../Models/Crud.php");
       $nuevo = new Crud($username,$contrasena);
-      $asd = $nuevo->execute("INSERT INTO cliente (nombre_cliente, apellido_cliente, correo, direccion, telefono) VALUES('$nombre', '$apellido', '$correo', '$direccion', '$telefono')");
+      $asd = $nuevo->execute("INSERT INTO cliente (nombre_cliente, apellido_cliente, correo, direccion, telefono, valido) VALUES('$nombre', '$apellido', '$correo', '$direccion', '$telefono',1)");
       echo "Cliente agregado exitosamente ";
       echo "<form action='../Controllers/ContMostrarClientes.php'><input type='submit' name='but_regresar' value = 'Regresar' /></form>";
 

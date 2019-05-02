@@ -120,6 +120,15 @@ http://www.tooplate.com/view/2082-pure-mix
 
 <!-- Detalles garantía
 ================================================== -->
+<?php
+
+require_once("../Models/cfg.php");
+require_once("../Models/Crud.php");
+$crud = new Crud();
+
+
+
+?>
 <section id="DetallesGarantia">
    <div class="container">
       <div class="row">
@@ -135,30 +144,51 @@ http://www.tooplate.com/view/2082-pure-mix
 
     </div>
 
+		"<table border ='1' cellspacing='2' cellpadding='10'>
+		<tr>
+		<th>Fase</th>
+		<th>Encargado</th>
+		<th>Fecha de inicio</th>
+		<th>Duración (días)</th>
+		<th>Comentario</th>
+		</tr>
+
     <?php
-        foreach ($rows as $key => $res) {
 
-        echo "<table border ='1' cellspacing='2' cellpadding='10'>
-        <tr>
-        <th>Fase</th>
-        <th>Encargado</th>
-        <th>Fecha de inicio</th>
-        <th>Duración</th>
-        <th>Comentario</th>
-        </tr>";
+        for ($i = 1; $i < count($rows); $i++) {
+					$empleadoid = intval($rows[$i]['empleado_encargado']);
+					$sql1 = "SELECT nombre, apellido from empleado where id = $empleadoid ";
+					$nombreEmpleado =$crud->getData($sql1);
+					if(is_array($nombreEmpleado)){
+						foreach ($nombreEmpleado as $res){
+							$nomEmpleado = $res['nombre'];
+							$apeEmpleado = $res['apellido'];
+						}
+					}
 
+					$formatDate = $crud->getData('SELECT DATE_FORMAT(fecha_inicio, "%d /%m /%Y") fecha_inicio from fase_garantia');
+					if(is_array($formatDate)){
+						foreach ($formatDate as $res){
+							$fechaFormateada= $res['fecha_inicio'];
 
-          echo '<td style="width:20%">' . $res['nombre_fase'] . "</td>";
+						}
+					}
+
+          echo '<td style="width:20%">' . $rows[$i]['nombre_fase'] . "</td>";
           //echo '<td style="width:20%">'. $rows[$i]['id_garantia'] .'</td>';
-          echo '<td style="width:20%">'. $res['empleado_encargado'] .'</td>';
-          echo '<td style="width:20%">'. $res['fecha_inicio'] .'</td>';
-          echo '<td style="width:20%">'. $res['duracion'] .'</td>';
-          echo '<td style="width:20%">'. $res['comentario'] .'</td>';
-          echo '<td style="width:20%"><form name="form" method="post" action ="../Views/UsarGarantia.php?id_garantia=' . $id_garantia . '"> <input type="submit" name="Agregar" value="Agregar" id="btn_agr"></form></td>';
+          echo '<td style="width:20%">'. $nomEmpleado .' ' . $apeEmpleado . '</td>';
+          echo '<td style="width:20%">'. $fechaFormateada .'</td>';
+          echo '<td style="width:20%">'. $rows[$i]['duracion'] .'</td>';
+          echo '<td style="width:20%">'. $rows[$i]['comentario'] .'</td>';
           echo "</tr>";
 
         }
+
+				echo '<form name="form" method="post" action ="../Views/UsarGarantia.php?id_garantia=' . $id_garantia . '">
+				<input type="submit" name="Agregar" value="Agregar fase" id="btn_agr"></form></td>';
           ?>
+
+
 
       </div>
    </div>

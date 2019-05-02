@@ -104,7 +104,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Clientes</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Empleados</h1>
 
            		</div>
 			</div>
@@ -123,42 +123,37 @@ http://www.tooplate.com/view/2082-pure-mix
 require_once("../Models/Crud.php");
 require_once("../Models/cfg.php");
 $new= new Crud(/*$username, $contrasena*/);
-$row = $new->getData("SELECT * FROM cliente");
+$row = $new->getData("SELECT * FROM empleado");
 				echo '<div style="overflow-x:auto; background-color = #f2f2f2;">';
 				echo "<table border ='1' cellspacing='2' cellpadding='10'>
 				<tr>
+				<th>Usuario</th>
 				<th>Nombre</th>
-				<th>Apellidos</th>
-				<th>Correo</th>
-				<th>Dirección</th>
-				<th>Teléfono</th>
-				<th>Estatus</th>
+				<th>Apellido</th>
+				<th>Rol</th>
+				<th>Estaus</th>
 				</tr>";
 
 				for ($i = 0; $i < count($row); $i++) {
 				    echo '<tr style="width:20%">';
-				    echo '<td style="width:18%">' . $row[$i]['nombre_cliente'] . "</td>";
-				    echo '<td style="width:18%">' . $row[$i]['apellido_cliente'] . "</td>";
-				    echo '<td style="width:20%">' . $row[$i]['correo'] . "</td>";
-				    echo '<td style="width:20%">' . $row[$i]['direccion'] . "</td>";
-				    echo '<td style="width:10%">' . $row[$i]['telefono'] . "</td>";
-						if ($row[$i]['valido'] == 1)
-							echo '<td style="width:10%">Activo</td>';
-						else{
-							echo '<td style="width:10%">Desactivo</td>';
-						}
+				    echo '<td style="width:18%">' . $row[$i]['username'] . "</td>";
+				    echo '<td style="width:18%">' . $row[$i]['nombre'] . "</td>";
+				    echo '<td style="width:20%">' . $row[$i]['apellido'] . "</td>";
+				    echo '<td style="width:20%">' . $row[$i]['rol'] . "</td>";
+            if ($row[$i]['valido'] == 1)
+              echo '<td style="width:10%">Activo</td>';
+            else{
+              echo '<td style="width:10%">Desactivo</td>';
+            }
 
-				    if($rol == "director" || $rol=="Director"){
+						echo '<td style="width:20%"><a href="../Controllers/ContModificarUsuario.php?id= ' . $row[$i]['id'] . '">Modificar</a>';
 
-							echo '<td style="width:20%"><a href="../Controllers/ContModificarCliente.php?id_cliente= ' . $row[$i]['id_cliente'] . '">Modificar</a>';
-
-				    }
 
 				    echo "</tr>";
 				  }
 ?>
 
-      <form action= "../Controllers/ContAgregarCliente.php"><input type="submit" value="Agregar nuevo cliente" id="agregar-clientes"></form>
+      <form action= "../Controllers/ContAgregarUsuario.php"><input type="submit" value="Agregar nuevo empleado" id="agregar-clientes"></form>
 
 
       </div>

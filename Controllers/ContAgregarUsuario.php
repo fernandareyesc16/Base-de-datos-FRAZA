@@ -12,15 +12,9 @@ require_once("../Views/AgregarUsuario.php");
 
       require_once("../Models/Crud.php");
       $nuevo = new Crud();
-      $insertaUsuario = $nuevo->execute("INSERT INTO empleado (nombre, apellido, rol, username, contrasena) VALUES('$nombreE', '$apellidoE', '$rolE', '$usernameE', '$contrasenaE')");
-      //$sql ="CREATE USER '$usernameE'@'localhost' IDENTIFIED BY '$contrasenaE'";
-      //$nuevoUsuario = $nuevo->execute($sql);
-      //$sql1= "GRANT 'empleado' TO '$usernameE'@'localhost'";
-      //$nuevo->execute($sql1);
-      //$sql2= "SET DEFAULT rol empleado to '$usernameE'@'localhost'";
-      //$nuevo->execute($sql2);
+      $insertaUsuario = $nuevo->execute("INSERT INTO empleado (nombre, apellido, rol, username, contrasena,valido) VALUES('$nombreE', '$apellidoE', '$rolE', '$usernameE', '$contrasenaE',1)");
       echo "Empleado agregado exitosamente";
-      echo "<form action='../Controllers/homepage.php'><input type='submit' name='but_regresar' value = 'Regresar' /></form>";
+      echo "<form action='../Controllers/ContMostrarUsuarios.php'><input type='submit' name='but_regresar' value = 'Regresar' /></form>";
 
 }
 ?>

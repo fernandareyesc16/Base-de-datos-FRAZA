@@ -11,18 +11,17 @@ $crud = new Crud($username, $contrasena);
     $numserie = $_POST['txt_numero_de_serie'];
     $modelo= $_POST['txt_modelo'];
     $marca = $_POST['txt_marca'];
-    $nombreCliente = $_POST['txt_cliente'];
-    $apellido = $_POST['txt_apellido'];
+    $idCliente = $_POST['Cliente'];
     $fechater =$_POST['txt_fecha_terminacion'];
 
     //Busca al cliente en la base de datos
-    $result = $crud->getData("SELECT id_cliente from cliente where nombre_cliente= '$nombreCliente' and apellido_cliente='$apellido'");
+    /*$result = $crud->getData("SELECT id_cliente from cliente where nombre_cliente= '$nombreCliente' and apellido_cliente='$apellido'");
       //print_r($result);
       if(!empty($result)){
         //extrae el id del cliente
         foreach ($result as $res){
           $id_cliente = $res['id_cliente'];
-        }
+        }*/
 
         //inserta la maquinaria
         $resultM = $crud->execute("INSERT INTO maquinaria (modelo, numero_de_serie, marca) VALUES('$modelo', '$numserie', '$marca')");
@@ -36,7 +35,7 @@ $crud = new Crud($username, $contrasena);
         }
 
           //inserta datos en la garantía
-            $resultG = $crud->execute("INSERT INTO garantia (cliente,fecha_creacion, fecha_terminacion, maquinaria) VALUES('$id_cliente',CURDATE(), '$fechater', '$id_maquinaria')");
+            $resultG = $crud->execute("INSERT INTO garantia (cliente,fecha_creacion, fecha_terminacion, maquinaria,valida) VALUES('$idCliente',CURDATE(), '$fechater', '$id_maquinaria',1)");
             $idGarantia = $crud->getData("SELECT id from garantia where maquinaria= $id_maquinaria");
 
             //extrae id de la garantía recién creada para asignarla posteriormete a fase_garantia
@@ -59,7 +58,7 @@ $crud = new Crud($username, $contrasena);
 
 
 
-}
+
 
 
 

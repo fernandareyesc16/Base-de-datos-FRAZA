@@ -121,31 +121,55 @@ http://www.tooplate.com/view/2082-pure-mix
 
 <!-- Usar garantía
 ================================================== -->
+<?php
+require_once("../Models/Crud.php");
+require_once("../Models/cfg.php");
+$crud = new Crud();
+$fases = $crud->getData("SELECT nombre_fase FROM fase");
+$nombreEncargado = $crud->getData("SELECT nombre, apellido from empleado where valido = 1");
+?>
+
 <section id="UsarGarantia">
    <div class="container">
       <div class="row">
 
-   <form action="../Controllers/ContInsertaFase.php?id_garantia=<?php echo $id_garantia ?>" method="post" name="form1">
-         <h3 id="texto_fase">Fase:</h3>
-       <input type="textbox" class="textbox" id="txt_fase" name="txt_fase" placeholder="Escriba una de las fases" />
-          <h3 id="txtDos_fase">Inspección, Reparación, Orden de piezas, Espera de piezas, Completada</h3>
+  <form action="../Controllers/ContInsertaFase.php?id_garantia=<?php echo $id_garantia ?>" method="post" name="form1">
+
+      </div>
+      Seleccione la fase: <select name="Fase">
+      <?php
+          foreach ($fases as $res) {
+          //while($res = mysqli_fetch_array($result)) {
+              echo '<option value="'.$res['nombre_fase'].'">'.$res['nombre_fase'].'</option>"';
+                 }
+       ?>
+      	</select>
+      <!--<input type="submit" name="submitFase" value="Get Selected Value" />-->
+
+      <div>
+
+          Seleccione el encargado: <select name="Encargado">
+        <?php
+            foreach ($nombreEncargado as $res) {
+            //while($res = mysqli_fetch_array($result)) {
+                echo '<option value="'.$res['nombre'].'">'.$res['nombre'].' '.$res['apellido'].'</option>"';
+                   }
+         ?>
+          </select>
+
+      </div>
       </div>
       <div>
-        <h3 id="txt_encargado">Encargado:</h3>
-          <input type="textbox" class="textbox" id="txt_nombre_encargado" name="txt_nombre_encargado" placeholder="Nombre" />
-          <input type="textbox" class="textbox" id="txt_apellido_encargado" name="txt_apellido_encargado" placeholder="Apellido" />
-      </div>
-      </div>
-      <div>
+        <h3 id="txt_fecha">Fecha de inicio:</h3>
           <input id="txt_fechaini" type="date" name="txt_fechaini"/>
       </div>
       <div>
           <h3 id="txt_dura">Duración:</h3>
-          <input id="box_dura" type="textbox" name="duracion" placeholder="Inserte número">
+          <input id="box_dura" type="textbox" name="duracion" placeholder="Número de días">
       </div>
       <div>
         <h3 id="txt_comen">Comentarios:</h3>
-          <input id="box_comen" type="textbox" name="comment" >
+          <textarea rows="4" cols="50" name="comentario">Escriba aquí...</textarea>
       </div>
     <input id="btn_G" type="submit" name="Guardar" value="Guardar">
     </form>

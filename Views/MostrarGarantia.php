@@ -131,6 +131,25 @@ require_once("../Models/Crud.php");
 $crud = new Crud(/*$username,$contrasena*/);
 
   $rows = $crud->getData("SELECT * from garantia");
+
+//formatea fecha de creación
+	$formatDate = $crud->getData('SELECT DATE_FORMAT(fecha_creacion, "%d /%m /%Y") fecha_creacion from garantia');
+	if(is_array($formatDate)){
+		foreach ($formatDate as $res){
+			$fechaFormateadaC= $res['fecha_creacion'];
+
+		}
+	}
+
+	//formatea fecha de terminación
+	$formatDateT = $crud->getData('SELECT DATE_FORMAT(fecha_terminacion, "%d /%m /%Y") fecha_terminacion from garantia');
+	if(is_array($formatDateT)){
+		foreach ($formatDateT as $res){
+			$fechaFormateadaT= $res['fecha_terminacion'];
+
+		}
+	}
+
    echo '<div style="overflow-x:auto;">';
    echo "<table border ='1' cellspacing='2' cellpadding='10'>
    <tr>
@@ -139,7 +158,8 @@ $crud = new Crud(/*$username,$contrasena*/);
    <th>Fecha Terminación</th>
    <th>Número de serie de Maquinaria</th>
    <th>Reparaciones</th>
-   <th>Fases</th>
+	 <th>Validez</th>
+   <th>Fase</th>
    </tr>";
 
 				for ($i = 0; $i < count($rows); $i++) {
@@ -156,7 +176,10 @@ $crud = new Crud(/*$username,$contrasena*/);
 			 		 }
 
 			 		 echo '<td style="width:20%">' . $nomClient . " " . $apeClient . "</td>";
-			 		 echo '<td style="width:20%">' . $rows[$i]['fecha_creacion'] . "</td>";
+
+					 $fC= $rows[$i]['fecha_creacion'];
+
+			 		 echo '<td style="width:15%">' . $fechaFormateadaC . "</td>";
 
 			 		 $id_garantia = intval($rows[$i]['id']);
 			 		 //Busca el número de serie con el id de la maquinaria de la garantia[i]
@@ -169,19 +192,14 @@ $crud = new Crud(/*$username,$contrasena*/);
 			 			 }
 			 		 }
 
-			 		 echo '<td style="width:20%">' . $rows[$i]['fecha_terminacion'] . "</td>";
+			 		 echo '<td style="width:15%">' . $fechaFormateadaT . "</td>";
 			 		 echo '<td style="width:20%">' . $numSerie . "</td>";
 			 		 echo '<td style="width:20%">' . $rows[$i]['num_reparaciones'] . "</td>";
-
-			 		 //
-			 		 /*echo '<td style="width:20%"><select name="Estatus">
-			 			 <option value="1">No se ha requerido</option>
-			 			 <option value="2>Inspección</option>
-			 			 <option value="3">Reparación</option>
-			 			 <option value="4">Orden de piezas</option>
-			 			 <option value="5">Espera de Piezas</option>
-			 			 <option value="6">Completada</option>
-			 		 </select></td>';*/
+					 if ($rows[$i]['valida'] == 1)
+						 echo '<td style="width:10%">Válida</td>';
+					 else{
+						 echo '<td style="width:10%">Inválida</td>';
+					 }
 			 		 echo '<td style="width:20%"><a href="../Controllers/ContDetallesGarantia.php?id_maquinaria= ' . $maqid . '&id_garantia= ' . $id_garantia . '">Ver detalles</a>';
 			 		 echo "</tr>";
 			  }

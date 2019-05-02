@@ -5,17 +5,17 @@ require_once("../Models/Crud.php");
 $id_garantia = $_GET['id_garantia'];
 include_once ("../Models/Crud.php");
 
-$crud = new Crud($username, $contrasena);
+$crud = new Crud(/*$username, $contrasena*/);
 
 if (isset($_POST['Guardar'])) {
 
   //$id_garantia = $_POST['id_garantia'];
-  $nombre_fase  = $_POST['txt_fase'];
-  $nombre_encargado = $_POST['txt_nombre_encargado'];
-  $apellido_encargado = $_POST['txt_apellido_encargado'];
+  $nombre_fase  = $_POST['Fase'];
+  $nombre_encargado = $_POST['Encargado'];
+  //$apellido_encargado = $_POST['txt_apellido_encargado'];
   $fecha_inicio = $_POST['txt_fechaini'];
   $duracion = $_POST['duracion'];
-  $comentario = $_POST['comment'];
+  $comentario = $_POST['comentario'];
 
   $row1 = $crud->getData ("SELECT id_fase from fase where nombre_fase = '$nombre_fase'");
   if(is_array($row1)){
@@ -24,7 +24,7 @@ if (isset($_POST['Guardar'])) {
   }
   }
 
-  $result = $crud->getData("SELECT id from empleado where nombre= '$nombre_encargado' and apellido='$apellido_encargado'");
+  $result = $crud->getData("SELECT id from empleado where nombre= '$nombre_encargado' ");
   if(is_array($result)){
     foreach ($result as $res){
       $id_empleado = $res['id'];

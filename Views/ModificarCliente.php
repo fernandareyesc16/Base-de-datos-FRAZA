@@ -141,6 +141,17 @@ http://www.tooplate.com/view/2082-pure-mix
       </div>
       <div>
       <input type="hidden" name= "id_cliente" value=<?php echo $_GET['id_cliente'];?>>
+    </select>
+  <!--<input type="submit" name="submitFase" value="Get Selected Value" />-->
+
+  <div>
+
+      Estado: <select name="Estado">
+
+            <option value="1">Activo</option>
+              <option value="0">Desactivo</option>
+
+            </select>
       <input id="btn_act" type="submit" name="but_actualizar" value = "Actualizar" /></form>
 
       </div>
