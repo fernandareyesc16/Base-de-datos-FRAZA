@@ -83,7 +83,7 @@ http://www.tooplate.com/view/2082-pure-mix
                        <li><a href="../Controllers/homepage.php">Inicio</a></li>
                        <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
                         <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                        <li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+                        <li><a href="../Controllers/ContAgregarUsuario.php">Empleados</a></li>
                         <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -108,7 +108,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Modificar un cliente</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloModificar">Modificar un cliente</h1>
 
            		</div>
 			</div>
@@ -128,33 +128,34 @@ http://www.tooplate.com/view/2082-pure-mix
             <form name="form" method="post" action ="../Controllers/ContUpdateCliente.php">
       </div>
       <div>
-      <input type="text" class="textbox" id="txt_nombreM" name="txt_nombre" value="<?php echo $nombre_cliente; ?>" required>
-      <input type="text" class="textbox" id="txt_apellidoM" name="txt_apellido" value="<?php echo $apellido_cliente; ?>" required>
+      <p id="p1"> Nombre:</p> <input type="text" class="textbox" id="txt_nombreM" name="txt_nombre" value="<?php echo $nombre_cliente; ?>" required>
+       <p id="p1"> Apellidos:</p><input type="text" class="textbox" id="txt_apellidoM" name="txt_apellido" value="<?php echo $apellido_cliente; ?>" required>
       <div>
-      <input type="text" class="textbox" id="txt_correoM" name="txt_correo" value="<?php echo $correo; ?>">
+       <p> Correo:</p><input type="text" class="textbox" id="txt_correoM" name="txt_correo" value="<?php echo $correo; ?>">
       </div>
       <div>
-        <input type="text" class="textbox" id="txt_direccionM" name="txt_direccion" value="<?php echo  $direccion; ?>">
+         <p> Dirección:</p><input type="text" class="textbox" id="txt_direccionM" name="txt_direccion" value="<?php echo  $direccion; ?>">
       </div>
       <div>
-      <input type="text" class="textbox" id="txt_telefonoM" name="txt_telefono" value= "<?php echo $telefono; ?>">
+      <p> Teléfono:</p><input type="text" class="textbox" id="txt_telefonoM" name="txt_telefono" value= "<?php echo $telefono; ?>">
       </div>
       <div>
       <input type="hidden" name= "id_cliente" value=<?php echo $_GET['id_cliente'];?>>
     </select>
   <!--<input type="submit" name="submitFase" value="Get Selected Value" />-->
 
-  <div>
+  <div id="estado">
 
-      Estado: <select name="Estado">
+      <p id="txtEstado">Estado:</p> <select name="Estado">
 
             <option value="1">Activo</option>
               <option value="0">Desactivo</option>
 
             </select>
-      <input id="btn_act" type="submit" name="but_actualizar" value = "Actualizar" /></form>
+    
 
       </div>
+        <input id="btn_act" type="submit" name="but_actualizar" value = "Actualizar" /></form>
     </form>
 
 

@@ -83,7 +83,7 @@ http://www.tooplate.com/view/2082-pure-mix
                         <li><a href="../Controllers/homepage.php">Inicio</a></li>
                         <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
                          <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                         <li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+                         <li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
                          <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -109,7 +109,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Usar garantía <?php echo $id_garantia ?> : insertar datos</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloUsar">Usar garantía <?php echo $id_garantia ?> : insertar datos</h1>
 
            		</div>
 			</div>
@@ -135,7 +135,8 @@ $nombreEncargado = $crud->getData("SELECT nombre, apellido from empleado where v
 
   <form action="../Controllers/ContInsertaFase.php?id_garantia=<?php echo $id_garantia ?>" method="post" name="form1">
 
-      </div>
+      </div >
+      <div id="selectFase">
       Seleccione la fase: <select name="Fase">
       <?php
           foreach ($fases as $res) {
@@ -144,9 +145,10 @@ $nombreEncargado = $crud->getData("SELECT nombre, apellido from empleado where v
                  }
        ?>
       	</select>
+        </div>
       <!--<input type="submit" name="submitFase" value="Get Selected Value" />-->
 
-      <div>
+      <div id="selectEncargado">
 
           Seleccione el encargado: <select name="Encargado">
         <?php
@@ -160,16 +162,16 @@ $nombreEncargado = $crud->getData("SELECT nombre, apellido from empleado where v
       </div>
       </div>
       <div>
-        <h3 id="txt_fecha">Fecha de inicio:</h3>
-          <input id="txt_fechaini" type="date" name="txt_fechaini"/>
+        
+         <p id="txtIni">Fecha de inicio:</p> <input id="txt_fechaini" type="date" name="txt_fechaini"/>
       </div>
       <div>
-          <h3 id="txt_dura">Duración:</h3>
-          <input id="box_dura" type="textbox" name="duracion" placeholder="Número de días">
+          
+        <p id="txtDura">Duración:</p>  <input id="box_dura" type="textbox" name="duracion" placeholder="Número de días">
       </div>
       <div>
-        <h3 id="txt_comen">Comentarios:</h3>
-          <textarea rows="4" cols="50" name="comentario">Escriba aquí...</textarea>
+        
+       <p id="txtComen">Comentarios:</p>   <textarea rows="4" cols="50" name="comentario" id="textareaUsar">Escriba aquí...</textarea>
       </div>
     <input id="btn_G" type="submit" name="Guardar" value="Guardar">
     </form>

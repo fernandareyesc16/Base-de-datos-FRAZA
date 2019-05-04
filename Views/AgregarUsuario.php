@@ -79,7 +79,7 @@ http://www.tooplate.com/view/2082-pure-mix
 												<li><a href="../Controllers/homepage.php">Inicio</a></li>
  											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
  												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
- 												<li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+ 												<li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
  												<li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -120,16 +120,16 @@ http://www.tooplate.com/view/2082-pure-mix
    <div class="container">
       <div class="row">
 
-   <form action = "../Controllers/homepage.php"><input type="submit" name = "but_regresar" value="Regresar" id="reg_2"></form>
+  
 
 <section id="slideRegistro" >
 <form  method="post" name="form" >
 
- <input type="text" name="nombre" id="txt_nombre" placeholder="Nombre"><br><br>
- <input type="text" name="apellido" id="txt_apellido" placeholder="Apellido"><br><br>
-<input id="txt_rol" type="text" name="rol" placeholder= "Empleado o director"><br><br>
- <input type="text" name="username" id="txt_usuario" placeholder="Nombre de usuario"><br><br>
- <input id="txt_contra" type="text" name="password" placeholder="Contraseña"><br><br>
+     <p id="pempleado"> Nombre:</p><input type="text" name="nombre" id="txt_nombre" placeholder="Nombre"><br><br>
+       <p id="pempleado1"> Apellido:</p><input type="text" name="apellido" id="txt_apellido" placeholder="Apellido"><br><br>
+       <p id="pempleado1"> Rol:</p><input id="txt_rol" type="text" name="rol" placeholder= "Empleado o director"><br><br>
+  <p id="pempleado1"> Usuario:</p><input type="text" name="username" id="txt_usuario" placeholder="Nombre de usuario"><br><br>
+  <p id="pempleado1"> Contraseña:</p><input id="txt_contra" type="text" name="password" placeholder="Contraseña"><br><br>
 <input type="submit" name = "but_submit" value="Agregar" id="reg">
 
 

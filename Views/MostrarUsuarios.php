@@ -79,7 +79,7 @@ http://www.tooplate.com/view/2082-pure-mix
 												<li><a href="../Controllers/homepage.php">Inicio</a></li>
  											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
  												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
- 												<li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+ 												<li><a href="../Controllers/ContAgregarUsuario.php">Empleados</a></li>
  												<li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -104,11 +104,11 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Empleados</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloEmpleados">Empleados</h1>
 
            		</div>
 			</div>
-
+<form action= "../Controllers/ContAgregarUsuario.php"><input type="submit" value="Agregar nuevo empleado" id="agregar-clientes"></form>
 		</div>
 	</div>
 </section>
@@ -153,7 +153,7 @@ $row = $new->getData("SELECT * FROM empleado");
 				  }
 ?>
 
-      <form action= "../Controllers/ContAgregarUsuario.php"><input type="submit" value="Agregar nuevo empleado" id="agregar-clientes"></form>
+      
 
 
       </div>

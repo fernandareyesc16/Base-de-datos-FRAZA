@@ -31,6 +31,11 @@ echo '<h1 style="
       right:-40px;
     font-size: 32px;
     color: #ffc299;"> Usuario o contraseña incorrectos  <h1>'
+    echo '<h1 style="
+position:relative;
+right:-40px;
+font-size: 32px;
+color: #ffc299;"> <a  href="../Views/login.php"> Regresar </a></h1>'
 
  ?>
 

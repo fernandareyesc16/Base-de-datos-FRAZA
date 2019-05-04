@@ -32,10 +32,16 @@ right:-40px;
 font-size: 32px;
 color: #ffc299;"> El usuario ya no es válido. Contacte al administrador.  <h1>'
 
+
+
+echo '<h1 style="
+position:relative;
+right:-40px;
+font-size: 32px;
+color: #ffc299;"> <a  href="../Views/login.php"> Regresar </a></h1>'
 ?>
 
 
-<a href="../Views/login.php" class="btn btn-default" id="btn_regresar">regresar</a>
 
 </body>
 </html>

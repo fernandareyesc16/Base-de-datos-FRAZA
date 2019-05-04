@@ -79,7 +79,13 @@ http://www.tooplate.com/view/2082-pure-mix
                         <li><a href="../Controllers/homepage.php">Inicio</a></li>
                         <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
                          <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                         <li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+                            <?php
+                         if($rol == "director" || $rol == "Director"){
+  
+                        echo ' <li><a href="../Controllers/ContAgregarUsuario.php">Empleados</a></li>';
+                            }
+
+                         ?>
                          <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -124,17 +130,17 @@ http://www.tooplate.com/view/2082-pure-mix
 
 
       <div id="nombre-apellido">
-          Nombre:<input type="text" class="textbox" id="txt_nombre" name="txt_nombre" placeholder="Nombre" required/>
-          Apellido:<input type="text" class="textbox" id="txt_apellido" name="txt_apellido" placeholder="Apellidos" required/>
+         <p id="p1"> Nombre:</p><input type="text" class="textbox" id="txt_nombre" name="txt_nombre" placeholder="Nombre" required/>
+         <p id="p1"> Apellidos:</p><input type="text" class="textbox" id="txt_apellido" name="txt_apellido" placeholder="Apellidos" required/>
       </div>
       <div>
-          Correo:<input type="text" class="textbox" id="txt_correo" name="txt_correo" placeholder="Correo" />
+         <p> Correo:</p><input type="text" class="textbox" id="txt_correo" name="txt_correo" placeholder="Correo" />
       </div>
       <div>
-          Dirección:<input type="text" class="textbox" id="txt_direccion" name="txt_direccion" placeholder="Dirección" />
+          <p> Dirección:</p><input type="text" class="textbox" id="txt_direccion" name="txt_direccion" placeholder="Dirección" />
       </div>
       <div>
-         Teléfono<input type="text" class="textbox" id="txt_telefono" name="txt_telefono" placeholder="Teléfono" />
+         <p> Teléfono:</p><input type="text" class="textbox" id="txt_telefono" name="txt_telefono" placeholder="Teléfono" />
       </div>
       <div>
           <input id="btn_agregar"type="submit" name="but_submit" value = "Agregar" />

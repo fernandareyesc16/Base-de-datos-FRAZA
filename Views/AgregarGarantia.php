@@ -81,7 +81,7 @@ http://www.tooplate.com/view/2082-pure-mix
                         <li><a href="../Controllers/homepage.php">Inicio</a></li>
                         <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
                          <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                         <li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+                         <li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
                          <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -150,8 +150,8 @@ $nombreCliente = $crud->getData("SELECT id_cliente, nombre_cliente, apellido_cli
 
       </div>
     <h3 id="txt_titulo">Datos adicionales: </h3>
-      <div>
-        Cliente: <select name="Cliente">
+      <div id="cliente">
+        Cliente: <select name="Cliente" >
           <?php
               foreach ($nombreCliente as $res) {
               //while($res = mysqli_fetch_array($result)) {

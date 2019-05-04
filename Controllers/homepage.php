@@ -69,22 +69,9 @@ http://www.tooplate.com/view/2082-pure-mix
               <div class="navicon">
                 <div class="menu-container">
 
-                  <div class="circle dark inline">
-                    <i class="icon ion-navicon"></i>
-                  </div>
+                 
 
-                  <div class="list-menu">
-                    <i class="icon ion-close-round close-iframe"></i>
-                    <div class="intro-inner">
-                     	<ul id="nav-menu">
-                      <li><a href="../Controllers/homepage.php">Inicio</a></li>
-                       <li><a href="../Views/MostrarClientes.php">Clientes</a></li>
-                        <li><a href="../Views/MostrarGarantia.php">Garantias</a></li>
-                        <li><a href="../Views/AgregarUsuario.php">Agregar empleado</a></li>
-                        <li><a href="../Views/login.php">Cerrar sesión</a></li>
-                      </ul>
-                    </div>
-                  </div>
+                 
 
                 </div>
               </div>
@@ -110,18 +97,26 @@ http://www.tooplate.com/view/2082-pure-mix
 
            		</div>
 
-                 <a href="../Controllers/ContMostrarClientes.php" class="btn btn-default" id="btn-clientes">Clientes</a>
-                <a href="../Views/MostrarGarantia.php" class="btn btn-default" id="btn-garantia">Garantías</a>
-                <?php
+
+<ul>
+  <li id="menu"><a class="active" href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
+  <li id="menu"><a href= "../Views/MostrarGarantia.php" >Garantías</a></li>
+   <?php
 
                 if($rol == "director" || $rol == "Director"){
-                  echo '<a href="../Controllers/ContMostrarUsuarios.php" class="btn btn-default" id="btn-empleado">Empleados</a>';
-                }
+  echo ' <li id="menu"><a href= "../Controllers/ContMostrarUsuarios.php">Empleados</a></li>';
+   }
 
                 ?>
+  <li id="menu"><a href="../Views/Login.php">Cerrar sesión</a></li>
+</ul>
 
 
-                <a href="../Views/Login.php" class="btn btn-default" id="btn-cerrar">Cerrar sesión</a>
+                 
+             
+
+
+               
 			</div>
 
 		</div>

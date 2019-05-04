@@ -83,7 +83,7 @@ http://www.tooplate.com/view/2082-pure-mix
                        <li><a href="../Controllers/homepage.php">Inicio</a></li>
                        <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
                         <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                        <li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+                        <li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
                         <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -108,7 +108,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Modificar Empleado/Usuario</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloModificar">Modificar Empleado/Usuario</h1>
 
            		</div>
 			</div>
@@ -118,7 +118,7 @@ http://www.tooplate.com/view/2082-pure-mix
 </section>
 
 
-<!-- Modifical Cliente
+<!-- Modifical Empleado
 ================================================== -->
 <section id="Garantías">
    <div class="container">
@@ -126,29 +126,30 @@ http://www.tooplate.com/view/2082-pure-mix
 
 
             <form name="form" method="post" action ="../Controllers/ContUpdateUsuario.php">
+     
+      <div>
+       <p id="pempleado"> Nombre:</p><input type="text" class="textbox" id="txt_nombre" name="txt_nombre" value="<?php echo $nombre_empleado; ?>" required>
+             <p id="pempleado1"> Apellido:</p><input type="text" class="textbox" id="txt_apellido" name="txt_apellido" value="<?php echo $apellido; ?>">
+             <p id="pempleado1"> Rol:</p><input type="text" class="textbox" id="txt_rol" name="txt_rol" value="<?php echo  $rol; ?>">
+     <p id="pempleado1"> Usuario:</p> <input type="text" class="textbox" id="txt_usuario" name="txt_usuario" value="<?php echo $usuario; ?>" required>
+        
+    
+  
+       
       </div>
-      <div>
-      <input type="text" class="textbox" id="txt_usuario" name="txt_usuario" value="<?php echo $usuario; ?>" required>
-      <input type="text" class="textbox" id="txt_nombre" name="txt_nombre" value="<?php echo $nombre_empleado; ?>" required>
-      <div>
-      <input type="text" class="textbox" id="txt_apellido" name="txt_apellido" value="<?php echo $apellido; ?>">
-      </div>
-      <div>
-        <input type="text" class="textbox" id="txt_rol" name="txt_rol" value="<?php echo  $rol; ?>">
-      </div>
-      <div>
+   
       <input type="hidden" name= "id" value=<?php echo $_GET['id'];?>>
     </select>
 
-  <div>
+  <div >
 
-      Estado: <select name="Estado">
+     <p id="txtEstado1">Estado:</p> <select name="Estado" id="estadoEmpleado">
 
             <option value="1">Activo</option>
               <option value="0">Desactivo</option>
 
             </select>
-      <input id="btn_act" type="submit" name="but_actualizar" value = "Actualizar" /></form>
+      <input id="btn_actEmpleado" type="submit" name="but_actualizar" value = "Actualizar" /></form>
 
       </div>
     </form>

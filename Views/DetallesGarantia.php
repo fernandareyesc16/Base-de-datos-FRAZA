@@ -82,7 +82,7 @@ http://www.tooplate.com/view/2082-pure-mix
 												<li><a href="../Controllers/homepage.php">Inicio</a></li>
  											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
  												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
- 												<li><a href="../Controllers/ContAgregarUsuario.php">Agregar empleado</a></li>
+ 												<li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
  												<li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -107,8 +107,8 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Detalles garantía</h1>
-                    <h3 class="wow fadeInUp" data-wow-delay="0.9s"> Garantía <?php echo $modelo, " ",  $marca, " ", $numSerie; ?></h3>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="garantia" >Detalles garantía, Garantía <?php echo $modelo, " ",  $marca, " ", $numSerie; ?</h1>
+                   
 
            		</div>
 			</div>
@@ -138,7 +138,7 @@ $crud = new Crud();
 
 
     <div>
-    <form action="../Controllers/ContMostrarGarantía.php" method="post"><input type="submit" name="Regresar" value="Regresar" id="btn_regr"></form>
+   
     </div>
     <div>
 
