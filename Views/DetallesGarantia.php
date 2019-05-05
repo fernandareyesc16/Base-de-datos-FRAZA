@@ -107,8 +107,8 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="garantia" >Detalles garantía, Garantía <?php echo $modelo, " ",  $marca, " ", $numSerie; ?</h1>
-                   
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="garantia" >Detalles garantía, Garantía <?php echo $modelo, " ",  $marca, " ", $numSerie; ?></h1>
+
 
            		</div>
 			</div>
@@ -138,7 +138,7 @@ $crud = new Crud();
 
 
     <div>
-   
+
     </div>
     <div>
 
