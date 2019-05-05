@@ -1,6 +1,9 @@
-﻿/*
+/*
+
 Template 2082 Pure Mix
+
 http://www.tooplate.com/view/2082-pure-mix
+
 */
 
 /* Body 
@@ -343,7 +346,45 @@ a.icon {
   z-index: 0;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ 
+  position: absolute;
+  top: -185px;
+  right: -400px;
+  width: 900px;
+  height: 200px;
+}
+
+#menu {
+  float: left;
+}
+
+#menu {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 30px;
+  text-decoration: none;
+  font-size: 22px;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+li a:hover {
+  background-color: #ffbb99;
+
+}
+
+
 @media all and (max-width: 767px) {
+
+
+
+
   .circle.large {
     width: 90px;
     height: 90px;
@@ -403,16 +444,18 @@ a.icon {
   padding-bottom: 100px;
 }
 
-#headerHome .header-thumb {
+#header .header-thumb {
   background: #ffffff;
   border: 10px solid #cc5200;
   padding: 62px 20px 62px 20px;
 }
-#headerHome .header-thumb2 {
+#header .header-thumb2 {
     position: absolute;
     top:50px;
-    right: 100px;
+    right: 10px;
   background: #ffffff;
+  width: 500px;
+  height: 150px;
   border: 10px solid #cc5200;
  padding: 32px 20px 32px 20px !important;
  padding: 62px 20px 62px 20px;
