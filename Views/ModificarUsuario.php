@@ -83,7 +83,7 @@ http://www.tooplate.com/view/2082-pure-mix
                        <li><a href="../Controllers/homepage.php">Inicio</a></li>
                        <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
                         <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                        <li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
+                        <li><a href="../Controllers/ContMostrarUsuarios.php"> Empleados</a></li>
                         <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
@@ -126,18 +126,18 @@ http://www.tooplate.com/view/2082-pure-mix
 
 
             <form name="form" method="post" action ="../Controllers/ContUpdateUsuario.php">
-     
+
       <div>
        <p id="pempleado"> Nombre:</p><input type="text" class="textbox" id="txt_nombre" name="txt_nombre" value="<?php echo $nombre_empleado; ?>" required>
              <p id="pempleado1"> Apellido:</p><input type="text" class="textbox" id="txt_apellido" name="txt_apellido" value="<?php echo $apellido; ?>">
              <p id="pempleado1"> Rol:</p><input type="text" class="textbox" id="txt_rol" name="txt_rol" value="<?php echo  $rol; ?>">
      <p id="pempleado1"> Usuario:</p> <input type="text" class="textbox" id="txt_usuario" name="txt_usuario" value="<?php echo $usuario; ?>" required>
-        
-    
-  
-       
+
+
+
+
       </div>
-   
+
       <input type="hidden" name= "id" value=<?php echo $_GET['id'];?>>
     </select>
 
