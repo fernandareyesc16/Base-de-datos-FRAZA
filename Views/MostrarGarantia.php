@@ -112,7 +112,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
            		</div>
 			</div>
-
+<form action= "../Controllers/ContAgregarCliente.php"><input type="submit" value="Agregar garantía" id="agregar-clientes"></form>
 		</div>
 	</div>
 </section>
