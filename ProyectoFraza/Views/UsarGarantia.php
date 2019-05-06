@@ -1,7 +1,8 @@
 
 
 
-<!DOCTYPE html>
+
+      <!DOCTYPE html>
 <html lang="en">
 <head>
 <!--
@@ -19,7 +20,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Site title
    ================================================== -->
-	<title>Taller Fraza - Detalles garantía</title>
+	<title>Taller Fraza - Usar garantia</title>
 
 	<!-- Bootstrap CSS
    ================================================== -->
@@ -36,7 +37,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Main CSS
    ================================================== -->
-	<link rel="stylesheet" href="/Base-de-datos-FRAZA/css/style.css">
+	<link rel="stylesheet" href="/ProyectoFraza/css/style.css">
 
 	<!-- Google web font
    ================================================== -->
@@ -79,11 +80,11 @@ http://www.tooplate.com/view/2082-pure-mix
                     <i class="icon ion-close-round close-iframe"></i>
                     <div class="intro-inner">
                      	<ul id="nav-menu">
-												<li><a href="../Controllers/homepage.php">Inicio</a></li>
- 											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
- 												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
- 												<li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
- 												<li><a href="../Views/login.php">Cerrar sesión</a></li>
+                        <li><a href="../Controllers/homepage.php">Inicio</a></li>
+                        <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
+                         <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
+                         <li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
+                         <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
                   </div>
@@ -101,14 +102,14 @@ http://www.tooplate.com/view/2082-pure-mix
 
 <!-- Header section
 ================================================== -->
+<?php $id_garantia = $_GET['id_garantia']; ?>
 <section id="header" class="header-four">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="garantia" >Detalles garantía, Garantía <?php echo $modelo, " ",  $marca, " ", $numSerie; ?></h1>
-
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloUsar">Usar garantía <?php echo $id_garantia ?> : insertar datos</h1>
 
            		</div>
 			</div>
@@ -118,76 +119,62 @@ http://www.tooplate.com/view/2082-pure-mix
 </section>
 
 
-<!-- Detalles garantía
+<!-- Usar garantía
 ================================================== -->
 <?php
-
-require_once("../Models/cfg.php");
 require_once("../Models/Crud.php");
+require_once("../Models/cfg.php");
 $crud = new Crud();
-
-
-
+$fases = $crud->getData("SELECT nombre_fase FROM fase");
+$nombreEncargado = $crud->getData("SELECT nombre, apellido from empleado where valido = 1");
 ?>
-<section id="DetallesGarantia">
+
+<section id="UsarGarantia">
    <div class="container">
       <div class="row">
 
+  <form action="../Controllers/ContInsertaFase.php?id_garantia=<?php echo $id_garantia ?>" method="post" name="form1">
 
- <form name="form" method="post" action ="../Controllers/ContDetallesGarantia.php"></form>
+      </div >
+      <div id="selectFase">
+      Seleccione la fase: <select name="Fase">
+      <?php
+          foreach ($fases as $res) {
+          //while($res = mysqli_fetch_array($result)) {
+              echo '<option value="'.$res['nombre_fase'].'">'.$res['nombre_fase'].'</option>"';
+                 }
+       ?>
+      	</select>
+        </div>
+      <!--<input type="submit" name="submitFase" value="Get Selected Value" />-->
 
+      <div id="selectEncargado">
 
-    <div>
+          Seleccione el encargado: <select name="Encargado">
+        <?php
+            foreach ($nombreEncargado as $res) {
+            //while($res = mysqli_fetch_array($result)) {
+                echo '<option value="'.$res['nombre'].'">'.$res['nombre'].' '.$res['apellido'].'</option>"';
+                   }
+         ?>
+          </select>
 
-    </div>
-    <div>
-
-    </div>
-
-		"<table border ='1' cellspacing='2' cellpadding='10'>
-		<tr>
-		<th>Fase</th>
-		<th>Encargado</th>
-		<th>Fecha de inicio</th>
-		<th>Duración (días)</th>
-		<th>Comentario</th>
-		</tr>
-
-    <?php
-
-        for ($i = 1; $i < count($rows); $i++) {
-					$empleadoid = intval($rows[$i]['empleado_encargado']);
-					$sql1 = "SELECT nombre, apellido from empleado where id = $empleadoid ";
-					$nombreEmpleado =$crud->getData($sql1);
-					if(is_array($nombreEmpleado)){
-						foreach ($nombreEmpleado as $res){
-							$nomEmpleado = $res['nombre'];
-							$apeEmpleado = $res['apellido'];
-						}
-					}
-
-					$formatDate = $crud->getData('SELECT DATE_FORMAT(fecha_inicio, "%d /%m /%Y") fecha_inicio from fase_garantia');
-					if(is_array($formatDate)){
-						foreach ($formatDate as $res){
-							$fechaFormateada= $res['fecha_inicio'];
-
-						}
-					}
-
-          echo '<td style="width:20%">' . $rows[$i]['nombre_fase'] . "</td>";
-          //echo '<td style="width:20%">'. $rows[$i]['id_garantia'] .'</td>';
-          echo '<td style="width:20%">'. $nomEmpleado .' ' . $apeEmpleado . '</td>';
-          echo '<td style="width:20%">'. $fechaFormateada .'</td>';
-          echo '<td style="width:20%">'. $rows[$i]['duracion'] .'</td>';
-          echo '<td style="width:20%">'. $rows[$i]['comentario'] .'</td>';
-          echo "</tr>";
-
-        }
-
-				echo '<form name="form" method="post" action ="../Views/UsarGarantia.php?id_garantia=' . $id_garantia . '">
-				<input type="submit" name="Agregar" value="Agregar fase" id="btn_agr"></form></td>';
-          ?>
-
+      </div>
+      </div>
+      <div>
+        
+         <p id="txtIni">Fecha de inicio:</p> <input id="txt_fechaini" type="date" name="txt_fechaini"/>
+      </div>
+      <div>
+          
+        <p id="txtDura">Duración:</p>  <input id="box_dura" type="textbox" name="duracion" placeholder="Número de días">
+      </div>
+      <div>
+        
+       <p id="txtComen">Comentarios:</p>   <textarea rows="4" cols="50" name="comentario" id="textareaUsar">Escriba aquí...</textarea>
+      </div>
+    <input id="btn_G" type="submit" name="Guardar" value="Guardar">
+    </form>
 
 
       </div>

@@ -35,7 +35,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Main CSS
    ================================================== -->
-	<link rel="stylesheet" href="/Base-de-datos-FRAZA/css/style.css">
+	<link rel="stylesheet" href="/ProyectoFraza/css/style.css">
 
 	<!-- Google web font
    ================================================== -->

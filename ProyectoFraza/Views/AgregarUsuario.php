@@ -1,10 +1,6 @@
-
-
-
-
-      <!doctype html>
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <!--
 
 Template 2082 Pure Mix
@@ -20,7 +16,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Site title
    ================================================== -->
-	<title>Taller Fraza - Modificar Cliente</title>
+	<title>Taller Fraza - Agregar Usuario</title>
 
 	<!-- Bootstrap CSS
    ================================================== -->
@@ -37,7 +33,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Main CSS
    ================================================== -->
-	<link rel="stylesheet" href="/Base-de-datos-FRAZA/css/style.css">
+	<link rel="stylesheet" href="/ProyectoFraza/css/style.css">
 
 	<!-- Google web font
    ================================================== -->
@@ -80,11 +76,11 @@ http://www.tooplate.com/view/2082-pure-mix
                     <i class="icon ion-close-round close-iframe"></i>
                     <div class="intro-inner">
                      	<ul id="nav-menu">
-                       <li><a href="../Controllers/homepage.php">Inicio</a></li>
-                       <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
-                        <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                        <li><a href="../Controllers/ContMostrarUsuarios.php">Empleados</a></li>
-                        <li><a href="../Views/login.php">Cerrar sesión</a></li>
+												<li><a href="../Controllers/homepage.php">Inicio</a></li>
+ 											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
+ 												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
+ 												<li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
+ 												<li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
                   </div>
@@ -108,7 +104,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloModificar">Modificar un cliente</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Agregar Empleado</h1>
 
            		</div>
 			</div>
@@ -118,48 +114,26 @@ http://www.tooplate.com/view/2082-pure-mix
 </section>
 
 
-<!-- Modifical Cliente
+<!-- Agregar Empleado
 ================================================== -->
-<section id="Garantías">
+<section id="empleado">
    <div class="container">
       <div class="row">
 
 
-            <form name="form" method="post" action ="../Controllers/ContUpdateCliente.php">
-      </div>
-      <div>
-      <p id="p1"> Nombre:</p> <input type="text" class="textbox" id="txt_nombreM" name="txt_nombre" value="<?php echo $nombre_cliente; ?>" required>
-       <p id="p1"> Apellidos:</p><input type="text" class="textbox" id="txt_apellidoM" name="txt_apellido" value="<?php echo $apellido_cliente; ?>" required>
-      <div>
-       <p> Correo:</p><input type="text" class="textbox" id="txt_correoM" name="txt_correo" value="<?php echo $correo; ?>">
-      </div>
-      <div>
-         <p> Dirección:</p><input type="text" class="textbox" id="txt_direccionM" name="txt_direccion" value="<?php echo  $direccion; ?>">
-      </div>
-      <div>
-      <p> Teléfono:</p><input type="text" class="textbox" id="txt_telefonoM" name="txt_telefono" value= "<?php echo $telefono; ?>">
-      </div>
-      <div>
-      <input type="hidden" name= "id_cliente" value=<?php echo $_GET['id_cliente'];?>>
-    </select>
-  <!--<input type="submit" name="submitFase" value="Get Selected Value" />-->
 
-  <div id="estado">
+<section id="slideRegistro" >
+<form  method="post" name="form" >
 
-      <p id="txtEstado">Estado:</p> <select name="Estado">
-
-            <option value="1">Activo</option>
-              <option value="0">Desactivo</option>
-
-            </select>
+     <p id="pempleado"> Nombre:</p><input type="text" name="nombre" id="txt_nombre" placeholder="Nombre"><br><br>
+       <p id="pempleado1"> Apellido:</p><input type="text" name="apellido" id="txt_apellido" placeholder="Apellido"><br><br>
+       <p id="pempleado1"> Rol:</p><input id="txt_rol" type="text" name="rol" placeholder= "Empleado o director"><br><br>
+  <p id="pempleado1"> Usuario:</p><input type="text" name="username" id="txt_usuario" placeholder="Nombre de usuario"><br><br>
+  <p id="pempleado1"> Contraseña:</p><input id="txt_contra" type="text" name="password" placeholder="Contraseña"><br><br>
+<input type="submit" name = "but_submit" value="Agregar" id="reg">
 
 
-      </div>
-        <input id="btn_act" type="submit" name="but_actualizar" value = "Actualizar" /></form>
-    </form>
-
-
-
+</form>
 
       </div>
    </div>

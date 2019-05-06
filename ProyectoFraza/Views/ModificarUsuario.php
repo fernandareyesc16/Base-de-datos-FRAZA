@@ -1,6 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
+
+
+
+      <!doctype html>
+<html>
+    <head>
 <!--
 
 Template 2082 Pure Mix
@@ -16,7 +20,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Site title
    ================================================== -->
-	<title>Taller Fraza - Mostrar Clientes</title>
+	<title>Taller Fraza - Modificar Cliente</title>
 
 	<!-- Bootstrap CSS
    ================================================== -->
@@ -33,7 +37,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Main CSS
    ================================================== -->
-	<link rel="stylesheet" href="/Base-de-datos-FRAZA/css/style.css">
+	<link rel="stylesheet" href="/ProyectoFraza/css/style.css">
 
 	<!-- Google web font
    ================================================== -->
@@ -76,11 +80,11 @@ http://www.tooplate.com/view/2082-pure-mix
                     <i class="icon ion-close-round close-iframe"></i>
                     <div class="intro-inner">
                      	<ul id="nav-menu">
-												<li><a href="../Controllers/homepage.php">Inicio</a></li>
- 											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
- 												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
- 												<li><a href="../Controllers/ContMostrarUsuarios.php">Empleados</a></li>
- 												<li><a href="../Views/login.php">Cerrar sesión</a></li>
+                       <li><a href="../Controllers/homepage.php">Inicio</a></li>
+                       <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
+                        <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
+                        <li><a href="../Controllers/ContMostrarUsuarios.php"> Empleados</a></li>
+                        <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
                   </div>
@@ -104,54 +108,51 @@ http://www.tooplate.com/view/2082-pure-mix
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloEmpleados">Empleados</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloModificar">Modificar Empleado/Usuario</h1>
 
            		</div>
 			</div>
-<form action= "../Controllers/ContAgregarUsuario.php"><input type="submit" value="Agregar nuevo empleado" id="agregar-clientes"></form>
+
 		</div>
 	</div>
 </section>
 
 
-<!-- Clientes
+<!-- Modifical Empleado
 ================================================== -->
-<section id="clientes">
+<section id="Garantías">
    <div class="container">
       <div class="row">
-<?php
-require_once("../Models/Crud.php");
-require_once("../Models/cfg.php");
-$new= new Crud(/*$username, $contrasena*/);
-$row = $new->getData("SELECT * FROM empleado");
-				echo '<div style="overflow-x:auto; background-color = #f2f2f2;">';
-				echo "<table border ='1' cellspacing='2' cellpadding='10'>
-				<tr>
-				<th>Usuario</th>
-				<th>Nombre</th>
-				<th>Apellido</th>
-				<th>Rol</th>
-				<th>Estaus</th>
-				</tr>";
-
-				for ($i = 0; $i < count($row); $i++) {
-				    echo '<tr style="width:20%">';
-				    echo '<td style="width:18%">' . $row[$i]['username'] . "</td>";
-				    echo '<td style="width:18%">' . $row[$i]['nombre'] . "</td>";
-				    echo '<td style="width:20%">' . $row[$i]['apellido'] . "</td>";
-				    echo '<td style="width:20%">' . $row[$i]['rol'] . "</td>";
-            if ($row[$i]['valido'] == 1)
-              echo '<td style="width:10%">Activo</td>';
-            else{
-              echo '<td style="width:10%">Desactivo</td>';
-            }
-
-						echo '<td style="width:20%"><a href="../Controllers/ContModificarUsuario.php?id= ' . $row[$i]['id'] . '">Modificar</a>';
 
 
-				    echo "</tr>";
-				  }
-?>
+            <form name="form" method="post" action ="../Controllers/ContUpdateUsuario.php">
+
+      <div>
+       <p id="pempleado"> Nombre:</p><input type="text" class="textbox" id="txt_nombre" name="txt_nombre" value="<?php echo $nombre_empleado; ?>" required>
+             <p id="pempleado1"> Apellido:</p><input type="text" class="textbox" id="txt_apellido" name="txt_apellido" value="<?php echo $apellido; ?>">
+             <p id="pempleado1"> Rol:</p><input type="text" class="textbox" id="txt_rol" name="txt_rol" value="<?php echo  $rol; ?>">
+     <p id="pempleado1"> Usuario:</p> <input type="text" class="textbox" id="txt_usuario" name="txt_usuario" value="<?php echo $usuario; ?>" required>
+
+
+
+
+      </div>
+
+      <input type="hidden" name= "id" value=<?php echo $_GET['id'];?>>
+    </select>
+
+  <div >
+
+     <p id="txtEstado1">Estado:</p> <select name="Estado" id="estadoEmpleado">
+
+            <option value="1">Activo</option>
+              <option value="0">Desactivo</option>
+
+            </select>
+      <input id="btn_actEmpleado" type="submit" name="but_actualizar" value = "Actualizar" /></form>
+
+      </div>
+    </form>
 
 
 

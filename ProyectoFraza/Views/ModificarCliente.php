@@ -2,9 +2,9 @@
 
 
 
-      <!DOCTYPE html>
-<html lang="en">
-<head>
+      <!doctype html>
+<html>
+    <head>
 <!--
 
 Template 2082 Pure Mix
@@ -20,7 +20,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Site title
    ================================================== -->
-	<title>Taller Fraza - Usar garantia</title>
+	<title>Taller Fraza - Modificar Cliente</title>
 
 	<!-- Bootstrap CSS
    ================================================== -->
@@ -37,7 +37,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Main CSS
    ================================================== -->
-	<link rel="stylesheet" href="/Base-de-datos-FRAZA/css/style.css">
+	<link rel="stylesheet" href="/ProyectoFraza/css/style.css">
 
 	<!-- Google web font
    ================================================== -->
@@ -80,11 +80,11 @@ http://www.tooplate.com/view/2082-pure-mix
                     <i class="icon ion-close-round close-iframe"></i>
                     <div class="intro-inner">
                      	<ul id="nav-menu">
-                        <li><a href="../Controllers/homepage.php">Inicio</a></li>
-                        <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
-                         <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                         <li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
-                         <li><a href="../Views/login.php">Cerrar sesión</a></li>
+                       <li><a href="../Controllers/homepage.php">Inicio</a></li>
+                       <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
+                        <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
+                        <li><a href="../Controllers/ContMostrarUsuarios.php">Empleados</a></li>
+                        <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
                   </div>
@@ -102,14 +102,13 @@ http://www.tooplate.com/view/2082-pure-mix
 
 <!-- Header section
 ================================================== -->
-<?php $id_garantia = $_GET['id_garantia']; ?>
 <section id="header" class="header-four">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
             	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloUsar">Usar garantía <?php echo $id_garantia ?> : insertar datos</h1>
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="tituloModificar">Modificar un cliente</h1>
 
            		</div>
 			</div>
@@ -119,62 +118,47 @@ http://www.tooplate.com/view/2082-pure-mix
 </section>
 
 
-<!-- Usar garantía
+<!-- Modifical Cliente
 ================================================== -->
-<?php
-require_once("../Models/Crud.php");
-require_once("../Models/cfg.php");
-$crud = new Crud();
-$fases = $crud->getData("SELECT nombre_fase FROM fase");
-$nombreEncargado = $crud->getData("SELECT nombre, apellido from empleado where valido = 1");
-?>
-
-<section id="UsarGarantia">
+<section id="Garantías">
    <div class="container">
       <div class="row">
 
-  <form action="../Controllers/ContInsertaFase.php?id_garantia=<?php echo $id_garantia ?>" method="post" name="form1">
 
-      </div >
-      <div id="selectFase">
-      Seleccione la fase: <select name="Fase">
-      <?php
-          foreach ($fases as $res) {
-          //while($res = mysqli_fetch_array($result)) {
-              echo '<option value="'.$res['nombre_fase'].'">'.$res['nombre_fase'].'</option>"';
-                 }
-       ?>
-      	</select>
-        </div>
-      <!--<input type="submit" name="submitFase" value="Get Selected Value" />-->
-
-      <div id="selectEncargado">
-
-          Seleccione el encargado: <select name="Encargado">
-        <?php
-            foreach ($nombreEncargado as $res) {
-            //while($res = mysqli_fetch_array($result)) {
-                echo '<option value="'.$res['nombre'].'">'.$res['nombre'].' '.$res['apellido'].'</option>"';
-                   }
-         ?>
-          </select>
-
-      </div>
+            <form name="form" method="post" action ="../Controllers/ContUpdateCliente.php">
       </div>
       <div>
-        
-         <p id="txtIni">Fecha de inicio:</p> <input id="txt_fechaini" type="date" name="txt_fechaini"/>
+      <p id="p1"> Nombre:</p> <input type="text" class="textbox" id="txt_nombreM" name="txt_nombre" value="<?php echo $nombre_cliente; ?>" required>
+       <p id="p1"> Apellidos:</p><input type="text" class="textbox" id="txt_apellidoM" name="txt_apellido" value="<?php echo $apellido_cliente; ?>" required>
+      <div>
+       <p> Correo:</p><input type="text" class="textbox" id="txt_correoM" name="txt_correo" value="<?php echo $correo; ?>">
       </div>
       <div>
-          
-        <p id="txtDura">Duración:</p>  <input id="box_dura" type="textbox" name="duracion" placeholder="Número de días">
+         <p> Dirección:</p><input type="text" class="textbox" id="txt_direccionM" name="txt_direccion" value="<?php echo  $direccion; ?>">
       </div>
       <div>
-        
-       <p id="txtComen">Comentarios:</p>   <textarea rows="4" cols="50" name="comentario" id="textareaUsar">Escriba aquí...</textarea>
+      <p> Teléfono:</p><input type="text" class="textbox" id="txt_telefonoM" name="txt_telefono" value= "<?php echo $telefono; ?>">
       </div>
-    <input id="btn_G" type="submit" name="Guardar" value="Guardar">
+      <div>
+      <input type="hidden" name= "id_cliente" value=<?php echo $_GET['id_cliente'];?>>
+    </select>
+  <!--<input type="submit" name="submitFase" value="Get Selected Value" />-->
+
+  <div id="estado">
+
+      <p id="txtEstado">Estado:</p> <select name="Estado">
+
+            <option value="1">Activo</option>
+              <option value="0">Desactivo</option>
+
+            </select>
+
+
+      </div>
+        <input id="btn_act" type="submit" name="but_actualizar" value = "Actualizar" /></form>
     </form>
+
+
 
 
       </div>
