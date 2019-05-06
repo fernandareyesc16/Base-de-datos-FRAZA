@@ -33,7 +33,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Main CSS
    ================================================== -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/ProyectoPro/css/style.css">
 
 	<!-- Google web font
    ================================================== -->
@@ -81,7 +81,7 @@ http://www.tooplate.com/view/2082-pure-mix
                          <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
                             <?php
                          if($rol == "director" || $rol == "Director"){
-  
+
                         echo ' <li><a href="../Controllers/ContAgregarUsuario.php">Empleados</a></li>';
                             }
 

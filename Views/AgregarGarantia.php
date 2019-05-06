@@ -35,7 +35,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Main CSS
    ================================================== -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/ProyectoPro/css/style.css">
 
 	<!-- Google web font
    ================================================== -->

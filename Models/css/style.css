@@ -6,7 +6,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 */
 
-/* Body 
+/* Body
 ------------------------------------- */
 body {
 		background:#cc5200;
@@ -63,7 +63,7 @@ h5 {
 }
 
 #p1 {
-  color:#000 ;
+  color:#ffffff ;
   font-size: 25px;
   line-height: 28px;
   word-spacing: 1px;
@@ -204,7 +204,7 @@ nav a {
   text-decoration: none;
 }
 
-.navicon {  
+.navicon {
   position: relative;
   right: -30px;
     top: -20px;
@@ -271,7 +271,7 @@ nav ul.right {
   .navicon {
 
     padding-right: 10px;
-      
+
   }
   nav ul.right {
   float: left;
@@ -283,7 +283,7 @@ a.icon {
   padding-right: 20px;
 }
 
-.intro-inner {  
+.intro-inner {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -437,7 +437,7 @@ a.icon {
     height: 100px;
   border: 10px solid #cc5200;
   padding: 32px 20px 32px 20px !important;
- 
+
 }
 #header .header-thumb2 {
     position: absolute;
@@ -492,7 +492,7 @@ top: 1020px;
   padding: 32px 20px 32px 20px !important;
 }
 
- 
+
 .header-three, .header-four,
 .header-five {
   height: 5vh !important;
@@ -510,7 +510,7 @@ top: 1020px;
 .header-two{
    height: 55vh !important;
   min-height: 530px;
-  padding-top: 120px !important; 
+  padding-top: 120px !important;
 }
 .header-one {
   background: url('../images/fondoGeneral.png') no-repeat;
@@ -519,14 +519,14 @@ top: 1020px;
   padding-top: 130px !important;
 }
 #headerHome{
-  background: url('../images/fondoF.jpg') no-repeat;   
+  background: url('../images/fondoF.jpg') no-repeat;
 }
 .header-two {
   background: url('../images/fondoGeneral.png') no-repeat;
 }
 .header-three {
   background: url('../images/fondoGeneral.png') no-repeat;
-    
+
 }
 .header-four {
   background: url('../images/fondoGeneral.png') no-repeat;
@@ -542,7 +542,7 @@ top: 1020px;
   text-align: center;
    height: 60vh !important;
   min-height: 520px;
-  
+
 }
 
 #Login img {
@@ -557,13 +557,13 @@ top: 1020px;
 
 
 #slideLogin{
-    	
+
     margin: 0;
     padding: 0;
     background-image: url("../images/fondologin.png");
 	background-size: 100%;
     width: auto;
-  
+
     height: 60vh !important;
   min-height: 520px;
 }
@@ -583,7 +583,7 @@ h5{
     right: 570px;
     bottom: 190px;
    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 32px; 
+    font-size: 32px;
     color: #ffc299;
 }
 
@@ -607,9 +607,9 @@ h4 {
 	text-align: center;
 	line-height: 35px;
 	background-color: #FBF6F6;
-	
-	
-	
+
+
+
 }
 #Utext{
   display: block;
@@ -617,7 +617,7 @@ h4 {
      right: 80px;
 	width: 30%;
 	height: 40px;
-     top: 248px;      
+     top: 248px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
@@ -631,7 +631,7 @@ h4 {
      right: 80px;
 	width: 30%;
 	height: 40px;
-     top: 268px;      
+     top: 268px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
@@ -648,13 +648,13 @@ h4 {
 	background-color: #ffb380;
 	width: 25%;
 	height: 40px;
-     top: 280px;      
+     top: 280px;
 	font-weight: 200;
     font-size: 15px;
-           
+
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-       
+
 }
 /*filter css*/
 .filter-wrapper {
@@ -718,7 +718,7 @@ h4 {
     width: 100%;
     height: 100%;
     overflow: hidden;
-} 
+}
 
 .fluid-img {
     width: 100%;
@@ -795,7 +795,7 @@ h4 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #tituloEmpleados{
   position: absolute;
@@ -884,7 +884,7 @@ h4 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #agregar-clientes{
     position: relative;
@@ -894,7 +894,7 @@ h4 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #tituloClientes{
   position: absolute;
@@ -909,12 +909,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_apellido{
     display: block;
@@ -922,12 +922,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 180;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_correo{
     display: block;
@@ -935,12 +935,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_direccion{
     display: block;
@@ -948,12 +948,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_correo{
     display: block;
@@ -961,12 +961,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_telefono{
     display: block;
@@ -974,12 +974,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #btn_agregar{
      position: relative;
@@ -989,7 +989,7 @@ h4 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 /* Agregar Empleado
 /* ========================================== */
@@ -1023,12 +1023,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 20px;      
+     top: 20px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_apellido{
     display: block;
@@ -1036,12 +1036,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: -20px;      
+     top: -20px;
 	font-weight: 180;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_rol{
     display: block;
@@ -1049,12 +1049,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: -20px;      
+     top: -20px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_usuario{
     display: block;
@@ -1062,12 +1062,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: -20px;      
+     top: -20px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_contra{
     display: block;
@@ -1075,12 +1075,12 @@ h4 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: -28px;      
+     top: -28px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
 #reg{
@@ -1091,7 +1091,7 @@ h4 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #reg_2{
      position: relative;
@@ -1101,7 +1101,7 @@ h4 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 
 /* Agregar Garantía
@@ -1117,10 +1117,10 @@ h3 {
 	font-weight: 200;
 	text-align: center;
 	line-height: 35px;
-	
-	
-	
-	
+
+
+
+
 }
 
 #txt_modelo{
@@ -1129,12 +1129,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 50px;      
+     top: 50px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_numero_de_serie{
     display: block;
@@ -1142,12 +1142,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 50px;      
+     top: 50px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_marca{
     display: block;
@@ -1155,20 +1155,20 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 50px;      
+     top: 50px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #cliente{
-  
+
 	position: relative;
      right: -450px;
 	width: 30%;
 	height: 40px;
-     top: 120px;      
+     top: 120px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
@@ -1180,12 +1180,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 150px;      
+     top: 150px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
 #txt_fecha_terminacion{
@@ -1194,12 +1194,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 190px;      
+     top: 190px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff;   
+    background-color: #ffffff;
 }
 
 #btn_ag{
@@ -1210,7 +1210,7 @@ h3 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #txt_titulo{
     	position: absolute;
@@ -1249,12 +1249,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 80px;      
+     top: 80px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_apellidoM{
     display: block;
@@ -1262,12 +1262,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 80px;      
+     top: 80px;
 	font-weight: 180;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
 #txt_direccionM{
@@ -1276,12 +1276,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_correoM{
     display: block;
@@ -1289,12 +1289,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_telefonoM{
     display: block;
@@ -1302,12 +1302,12 @@ h3 {
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;      
+     top: 180px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #btn_act{
      position: absolute;
@@ -1317,7 +1317,7 @@ h3 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #estado{
   position: absolute;
@@ -1342,7 +1342,7 @@ h3 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #agregar_garantias{
     position: relative;
@@ -1352,7 +1352,7 @@ h3 {
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 
 /* Usar garantía
@@ -1402,16 +1402,16 @@ top: 530px;
 right: 800px;
 }
 #textareaUsar{
-  
+
   position: relative;
      right: -400px;
-     top: 150px; 
+     top: 150px;
      width: 400px;
-     height: 80px;     
+     height: 80px;
   font-weight: 200;
     font-size: 15px;
   font-family: 'Source Code Pro', monospace;
- 
+
 }
 
 #texto_fase {
@@ -1424,8 +1424,8 @@ right: 800px;
 	font-weight: 200;
 	text-align: center;
 	line-height: 35px;
-	
-	
+
+
 }
 
 #txtDos_fase {
@@ -1438,8 +1438,8 @@ right: 800px;
 	font-weight: 200;
 	text-align: center;
 	line-height: 35px;
-	
-	
+
+
 }
 #txt_encargado {
 	position: absolute;
@@ -1451,8 +1451,8 @@ right: 800px;
 	font-weight: 200;
 	text-align: center;
 	line-height: 35px;
-	
-	
+
+
 }
 #txt_dura {
 	position: absolute;
@@ -1464,8 +1464,8 @@ right: 800px;
 	font-weight: 200;
 	text-align: center;
 	line-height: 35px;
-	
-	
+
+
 }
 
 #txt_comen {
@@ -1478,8 +1478,8 @@ right: 800px;
 	font-weight: 200;
 	text-align: center;
 	line-height: 35px;
-	
-	
+
+
 }
 
 #txt_fase{
@@ -1488,12 +1488,12 @@ right: 800px;
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 10px;      
+     top: 10px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_nombre_encargado{
     display: block;
@@ -1501,12 +1501,12 @@ right: 800px;
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 70px;      
+     top: 70px;
 	font-weight: 180;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
 #txt_apellido_encargado{
@@ -1515,12 +1515,12 @@ right: 800px;
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 80px;      
+     top: 80px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #txt_fechaini{
     display: block;
@@ -1528,12 +1528,12 @@ right: 800px;
      right: 10px;
 	width: 20%;
 	height: 40px;
-     top: 95px;      
+     top: 95px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #box_dura{
     display: block;
@@ -1541,12 +1541,12 @@ right: 800px;
      right: 10px;
 	width: 20%;
 	height: 40px;
-     top: 130px;      
+     top: 130px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #box_comen{
     display: block;
@@ -1554,12 +1554,12 @@ right: 800px;
      right: 10px;
 	width: 20%;
 	height: 40px;
-     top: 170px;      
+     top: 170px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 #btn_G{
      position: relative;
@@ -1569,7 +1569,7 @@ right: 800px;
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 
 /* Detalles garantía
@@ -1583,7 +1583,7 @@ right: 800px;
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #btn_agr{
     position: relative;
@@ -1593,7 +1593,7 @@ right: 800px;
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 #garantia{
   position: absolute;
@@ -1640,7 +1640,7 @@ top: 570px;
     height: 40px;
      background:#ff944d;
      font-size: 17px;
-    color:  #000000;  
+    color:  #000000;
 }
 
 

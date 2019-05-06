@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+require_once("../Models/cfg.php")
+ ?>
 <html lang="en">
 <head>
 <!--
@@ -16,7 +19,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Site title
    ================================================== -->
-	<title>Taller Fraza - Agregar Usuario</title>
+	<title>Fraza - Homepage</title>
 
 	<!-- Bootstrap CSS
    ================================================== -->
@@ -33,7 +36,7 @@ http://www.tooplate.com/view/2082-pure-mix
 
 	<!-- Main CSS
    ================================================== -->
-	<link rel="stylesheet" href="/ProyectoPro/css/style.css">
+	<link rel="stylesheet" href="css/styleH.css">
 
 	<!-- Google web font
    ================================================== -->
@@ -61,29 +64,14 @@ http://www.tooplate.com/view/2082-pure-mix
          <div class="container">
             <div class="row">
 
-              <div class="brand">
-                <a href="index.html">Taller Fraza</a>
-              </div>
+
 
               <div class="navicon">
                 <div class="menu-container">
 
-                  <div class="circle dark inline">
-                    <i class="icon ion-navicon"></i>
-                  </div>
+                 
 
-                  <div class="list-menu">
-                    <i class="icon ion-close-round close-iframe"></i>
-                    <div class="intro-inner">
-                     	<ul id="nav-menu">
-												<li><a href="../Controllers/homepage.php">Inicio</a></li>
- 											 <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
- 												<li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
- 												<li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
- 												<li><a href="../Views/login.php">Cerrar sesión</a></li>
-                      </ul>
-                    </div>
-                  </div>
+                 
 
                 </div>
               </div>
@@ -96,47 +84,43 @@ http://www.tooplate.com/view/2082-pure-mix
 </div>
 
 
-<!-- Header section
+<!-- Homepage
 ================================================== -->
-<section id="header" class="header-four">
+<section id="header" class="header-one">
 	<div class="container">
 		<div class="row">
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
-            	<div class="header-thumb">
-              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Agregar Empleado</h1>
+
+            	<div class="header-thumb2">
+              		 <h1 class="wow fadeIn" data-wow-delay="0.6s">Taller Fraza</h1>
 
            		</div>
+
+
+<ul>
+  <li id="menu"><a class="active" href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
+  <li id="menu"><a href= "../Views/MostrarGarantia.php" >Garantías</a></li>
+   <?php
+
+                if($rol == "director" || $rol == "Director"){
+  echo ' <li id="menu"><a href= "../Controllers/ContMostrarUsuarios.php">Empleados</a></li>';
+   }
+
+                ?>
+  <li id="menu"><a href="../Views/Login.php">Cerrar sesión</a></li>
+</ul>
+
+
+                 
+             
+
+
+               
 			</div>
 
 		</div>
 	</div>
-</section>
-
-
-<!-- Agregar Empleado
-================================================== -->
-<section id="empleado">
-   <div class="container">
-      <div class="row">
-
-
-
-<section id="slideRegistro" >
-<form  method="post" name="form" >
-
-     <p id="pempleado"> Nombre:</p><input type="text" name="nombre" id="txt_nombre" placeholder="Nombre"><br><br>
-       <p id="pempleado1"> Apellido:</p><input type="text" name="apellido" id="txt_apellido" placeholder="Apellido"><br><br>
-       <p id="pempleado1"> Rol:</p><input id="txt_rol" type="text" name="rol" placeholder= "Empleado o director"><br><br>
-  <p id="pempleado1"> Usuario:</p><input type="text" name="username" id="txt_usuario" placeholder="Nombre de usuario"><br><br>
-  <p id="pempleado1"> Contraseña:</p><input id="txt_contra" type="text" name="password" placeholder="Contraseña"><br><br>
-<input type="submit" name = "but_submit" value="Agregar" id="reg">
-
-
-</form>
-
-      </div>
-   </div>
 </section>
 
 
