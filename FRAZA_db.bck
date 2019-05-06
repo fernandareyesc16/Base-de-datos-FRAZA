@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8mb4 ;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -29,8 +29,9 @@ CREATE TABLE `cliente` (
   `correo` varchar(80) DEFAULT NULL,
   `direccion` varchar(180) DEFAULT NULL,
   `telefono` varchar(25) DEFAULT NULL,
+  `valido` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,11 +53,13 @@ DROP TABLE IF EXISTS `empleado`;
 CREATE TABLE `empleado` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
+  `contrasena` varchar(50) DEFAULT NULL,
   `nombre` varchar(70) NOT NULL,
   `apellido` varchar(80) NOT NULL,
   `rol` varchar(15) NOT NULL,
+  `valido` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +82,7 @@ CREATE TABLE `fase` (
   `id_fase` int(15) NOT NULL AUTO_INCREMENT,
   `nombre_fase` varchar(20) NOT NULL,
   PRIMARY KEY (`id_fase`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,6 +91,7 @@ CREATE TABLE `fase` (
 
 LOCK TABLES `fase` WRITE;
 /*!40000 ALTER TABLE `fase` DISABLE KEYS */;
+INSERT INTO `fase` VALUES (1,'No se ha requerido'),(2,'Inspección'),(3,'Reparación'),(4,'Orden de piezas'),(5,'Espera de piezas'),(6,'Completada');
 /*!40000 ALTER TABLE `fase` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,13 +109,13 @@ CREATE TABLE `fase_garantia` (
   `fecha_inicio` date DEFAULT NULL,
   `duracion` int(11) DEFAULT NULL,
   `comentario` varchar(300) DEFAULT NULL,
-  PRIMARY KEY (`id_garantia`,`id_fase`),
-  KEY `id_fase` (`id_fase`),
   KEY `empleado_encargado` (`empleado_encargado`),
-  CONSTRAINT `fase_garantia_ibfk_1` FOREIGN KEY (`id_garantia`) REFERENCES `garantia` (`id`),
-  CONSTRAINT `fase_garantia_ibfk_2` FOREIGN KEY (`id_fase`) REFERENCES `fase` (`id_fase`),
-  CONSTRAINT `fase_garantia_ibfk_3` FOREIGN KEY (`empleado_encargado`) REFERENCES `empleado` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `fk_grade_id_2` (`id_fase`),
+  KEY `fk_grade_id_1` (`id_garantia`),
+  CONSTRAINT `fase_garantia_ibfk_3` FOREIGN KEY (`empleado_encargado`) REFERENCES `empleado` (`id`),
+  CONSTRAINT `fk_grade_id_1` FOREIGN KEY (`id_garantia`) REFERENCES `garantia` (`id`),
+  CONSTRAINT `fk_grade_id_2` FOREIGN KEY (`id_fase`) REFERENCES `fase` (`id_fase`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,6 +126,25 @@ LOCK TABLES `fase_garantia` WRITE;
 /*!40000 ALTER TABLE `fase_garantia` DISABLE KEYS */;
 /*!40000 ALTER TABLE `fase_garantia` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = cp850 */ ;
+/*!50003 SET character_set_results = cp850 */ ;
+/*!50003 SET collation_connection  = cp850_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `insert_after_reparacion` AFTER INSERT ON `fase_garantia` FOR EACH ROW BEGIN
+IF NEW.id_fase = 3 THEN
+UPDATE garantia SET num_reparaciones = num_reparaciones + 1 WHERE id = NEW.id_garantia;
+END IF;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `garantia`
@@ -137,12 +160,13 @@ CREATE TABLE `garantia` (
   `num_reparaciones` int(11) DEFAULT '0',
   `cliente` int(11) DEFAULT NULL,
   `maquinaria` int(11) DEFAULT NULL,
+  `valida` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cliente` (`cliente`),
   KEY `maquinaria` (`maquinaria`),
   CONSTRAINT `garantia_ibfk_2` FOREIGN KEY (`cliente`) REFERENCES `cliente` (`id_cliente`),
   CONSTRAINT `garantia_ibfk_3` FOREIGN KEY (`maquinaria`) REFERENCES `maquinaria` (`id_maquinaria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +192,7 @@ CREATE TABLE `maquinaria` (
   `marca` varchar(80) DEFAULT NULL,
   `fecha_de_compra` date DEFAULT NULL,
   PRIMARY KEY (`id_maquinaria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -179,6 +203,31 @@ LOCK TABLES `maquinaria` WRITE;
 /*!40000 ALTER TABLE `maquinaria` DISABLE KEYS */;
 /*!40000 ALTER TABLE `maquinaria` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'garantias_fraza'
+--
+/*!50106 SET @save_time_zone= @@TIME_ZONE */ ;
+/*!50106 DROP EVENT IF EXISTS `garantia_valida` */;
+DELIMITER ;;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;;
+/*!50003 SET character_set_client  = cp850 */ ;;
+/*!50003 SET character_set_results = cp850 */ ;;
+/*!50003 SET collation_connection  = cp850_general_ci */ ;;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;;
+/*!50003 SET @saved_time_zone      = @@time_zone */ ;;
+/*!50003 SET time_zone             = 'SYSTEM' */ ;;
+/*!50106 CREATE*/ /*!50117 DEFINER=`root`@`localhost`*/ /*!50106 EVENT `garantia_valida` ON SCHEDULE EVERY 1 DAY STARTS '2019-06-05 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO UPDATE garantia SET valida=0 where fecha_terminacion < CURDATE() */ ;;
+/*!50003 SET time_zone             = @saved_time_zone */ ;;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;;
+/*!50003 SET character_set_results = @saved_cs_results */ ;;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;;
+DELIMITER ;
+/*!50106 SET TIME_ZONE= @save_time_zone */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -189,4 +238,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-16 11:36:02
+-- Dump completed on 2019-05-05 21:54:24
