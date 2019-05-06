@@ -82,7 +82,7 @@ http://www.tooplate.com/view/2082-pure-mix
                             <?php
                          if($rol == "director" || $rol == "Director"){
 
-                        echo ' <li><a href="../Controllers/ContAgregarUsuario.php">Empleados</a></li>';
+                        echo ' <li><a href="../Controllers/ContContUsuarios.php">Empleados</a></li>';
                             }
 
                          ?>

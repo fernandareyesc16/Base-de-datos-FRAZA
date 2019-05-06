@@ -81,7 +81,7 @@ http://www.tooplate.com/view/2082-pure-mix
                         <li><a href="../Controllers/homepage.php">Inicio</a></li>
                         <li><a href="../Controllers/ContMostrarClientes.php">Clientes</a></li>
                          <li><a href="../Controllers/ContMostrarGarantía.php">Garantias</a></li>
-                         <li><a href="../Controllers/ContAgregarUsuario.php"> Empleados</a></li>
+                         <li><a href="../Controllers/ContMostrarUsuarios.php"> Empleados</a></li>
                          <li><a href="../Views/login.php">Cerrar sesión</a></li>
                       </ul>
                     </div>
