@@ -13,12 +13,12 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-style: normal;
     font-weight: 300;
-    position: relative;
+    position: absolute;
 }
 
 html,body {
   width: 100%;
-  overflow-x: hidden;
+  
 }
 
 html {
