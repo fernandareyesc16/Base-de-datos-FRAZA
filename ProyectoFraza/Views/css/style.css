@@ -93,16 +93,7 @@ a {
 }
 a,
 a:hover,
-a:focus {
-  color: inherit;
-  text-decoration: none;
-  outline: 0;
-  -webkit-transition: all 0.25s ease-out;
-  -moz-transition: all 0.25s ease-out;
-  -ms-transition: all 0.25s ease-out;
-  -o-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
-}
+
 
 img {
   width: 100%;
@@ -134,43 +125,13 @@ img {
   -webkit-animation: sk-pulseScaleOut 1s infinite ease-in-out;
           animation: sk-pulseScaleOut 1s infinite ease-in-out; }
 
-@-webkit-keyframes sk-pulseScaleOut {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0); }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 0; } }
-
-@keyframes sk-pulseScaleOut {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0); }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 0; } }
 
 
 
 /* navigation styles
 /* ========================================== */
 .nav-container,
-nav {
-  overflow: visible;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-}
 
-nav {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-}
 
 nav a {
   color: #333333;
@@ -239,13 +200,6 @@ nav ul.right {
   padding: 6px;
 }
 
-.nav-text-light a {
-  color: #ffffff;
-}
-
-.sticky .nav-text-light a {
-  color: #555555;
-}
 
 .sticky nav.nav-inner .navbar {
   height: 70px;
@@ -439,6 +393,20 @@ a.icon {
   padding: 32px 20px 32px 20px !important;
 
 }
+/* Cambio css*/
+
+#header .header-thumbD {
+  background: #ffffff;
+  position: absolute;
+    top:-70px;
+    right: 50px;
+    width: 500px;
+    height: 140px;
+  border: 10px solid #cc5200;
+  padding: 32px 20px 32px 20px !important;
+
+}
+
 #header .header-thumb2 {
     position: absolute;
     top:20px;
@@ -656,89 +624,9 @@ h4 {
 	margin: 10px 490px auto;
 
 }
-/*filter css*/
-.filter-wrapper {
-    width: 100%;
-    margin-bottom: 50px;
-    overflow: hidden;
-}
 
-.filter-wrapper li {
-    display: inline-block;
-    margin: 4px;
-}
 
-.filter-wrapper li a {
-    position: absolute;
-    top: 250px;
-    right: 200px;
-    color:#f9f9f9 ;
-    background: #111112;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    padding: 8px 17px;
-    margin-right: 2px;
-    margin-left: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.4s ease-in-out;
-}
-.filter-wrapper li a:active {
-  background: #cc5200 !important;
-}
-.filter-wrapper li a:hover,
-.filter-wrapper li a:focus {
-  background: #cc5200;
-  color: #ffffff;
-}
 
-/*isotope box css*/
-.iso-box-section {
-    width: 100%;
-}
-
-.iso-box-wrapper {
-    width: 100%;
-    padding: 0;
-    clear: both;
-    position: relative;
-}
-
-.iso-box {
-    position: relative;
-    min-height: 50px;
-    float: left;
-    overflow: hidden;
-    margin-bottom: 25px;
-}
-
-.iso-box > a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.fluid-img {
-    width: 100%;
-    display: block;
-}
-
-/* single project section styles
-/* ========================================== */
-#single-project {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
-}
-
-#single-project .project-info {
-  padding-bottom: 10px;
-}
-
-#single-project img {
-  padding-top: 14px;
-}
 
 
 
@@ -804,77 +692,7 @@ h4 {
 
 /* Clientes
 /* ========================================== */
-#contact {
-  padding-top: 5rem;
-  padding-bottom: 0rem;
-}
 
-#contact .fa {
-  font-size: 32px;
-  padding-right: 10px;
-}
-
-#contact #map-canvas  {
-  border: none;
-  width: 100%;
-  height: 300px;
-  margin-top: 40px;
-}
-
-#contact .contact-form {
-  padding-top: 14px;
-}
-
-#contact .form-control {
-  background: transparent;
-  border: 1px solid #eee;
-  border-radius: 0px;
-  box-shadow: none;
-  font-size: 16px;
-  margin-bottom: 16px;
-  transition: all 0.4s ease-in-out;
-}
-
-#contact .form-control:hover {
-  border-color: #f0f0f0;
-}
-
-#contact textarea {min-height: 100px;}
-
-#contact input {height: 50px;}
-
-#contact input[type='submit'] {
-  background: #111112;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  transition: all 0.4s ease-in-out;
-  margin-top: 10px;
-}
-#contact input[type='submit-clientes'] {
-  background: #111112;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  transition: all 0.4s ease-in-out;
-  margin-top: 10px;
-}
-#contact input[type='submit']:hover {
-  background: #444;
-}
-
-.contact-submit {
-	width: 50%;
-}
-
-#contact .col-md-4 {
-  background: #fff;
-  padding: 62px 0px 32px 42px;
-  position: relative;
-  bottom: -50px;
-}
 
 #regresar-clientes{
     position: relative;
@@ -903,21 +721,21 @@ h4 {
 /* AgregarCliente
 /* ========================================== */
 
-#txt_nombre{
-    display: block;
+#txt_nombreA{
+  display: block;
 	position: relative;
      right: 130px;
 	width: 30%;
 	height: 40px;
-     top: 180px;
+     top: 70px;
 	font-weight: 200;
     font-size: 15px;
 	font-family: 'Source Code Pro', monospace;
 	margin: 10px 490px auto;
     background-color: #ffffff;
 }
-#txt_apellido{
-    display: block;
+#txt_apellidoA{
+   display: block;
 	position: relative;
      right: 130px;
 	width: 30%;
@@ -929,7 +747,20 @@ h4 {
 	margin: 10px 490px auto;
     background-color: #ffffff;
 }
-#txt_correo{
+#txt_correoA{
+    display: block;
+	position: relative;
+     right: 130px;
+	width: 30%;
+	height: 40px;
+     top: 100px;
+	font-weight: 200;
+    font-size: 15px;
+	font-family: 'Source Code Pro', monospace;
+	margin: 10px 490px auto;
+    background-color: #ffffff;
+}
+#txt_direccionA{
     display: block;
 	position: relative;
      right: 130px;
@@ -942,7 +773,7 @@ h4 {
 	margin: 10px 490px auto;
     background-color: #ffffff;
 }
-#txt_direccion{
+#txt_correoA{
     display: block;
 	position: relative;
      right: 130px;
@@ -955,20 +786,7 @@ h4 {
 	margin: 10px 490px auto;
     background-color: #ffffff;
 }
-#txt_correo{
-    display: block;
-	position: relative;
-     right: 130px;
-	width: 30%;
-	height: 40px;
-     top: 180px;
-	font-weight: 200;
-    font-size: 15px;
-	font-family: 'Source Code Pro', monospace;
-	margin: 10px 490px auto;
-    background-color: #ffffff;
-}
-#txt_telefono{
+#txt_telefonoA{
     display: block;
 	position: relative;
      right: 130px;
@@ -1107,10 +925,10 @@ h4 {
 /* Agregar Garantía
 /* ========================================== */
 
-h3 {
+#datos {
 	position: absolute;
     right: 100px;
-    top: 280px;
+    top: 240px;
 	margin-left: 180px;
 	width: 90%;
 	font-size: 20px;
@@ -1214,7 +1032,7 @@ h3 {
 }
 #txt_titulo{
     	position: absolute;
-    top: 500px;
+    top: 450px;
     right: 100px;
 	margin-left: 180px;
 	width: 90%;
@@ -1595,9 +1413,11 @@ right: 800px;
      font-size: 17px;
     color:  #000000;
 }
+
+/* Cambio css*/
 #garantia{
   position: absolute;
-  top: -30px;
+  top: -15px;
 }
 
 
@@ -1645,74 +1465,5 @@ top: 570px;
 
 
 
-/* Responsive Mobile styles
-/* ========================================== */
-@media (max-width: 980px) {
-
-  .intro-inner {top: 30%;}
-
-  #contact .col-md-4 {
-    padding: 62px 20px 42px 32px;
-  }
-
-  #contact .col-md-4 p {
-    font-size: 12px;
-  }
-
-  #contact #map-canvas {
-    margin-bottom: 60px;
-  }
-}
 
 
-@media (max-width: 768px) {
-
-  .brand {
-    padding-left: 24px;
-  }
-
-  .header-one, .header-two,
-  .header-three, .header-four,
-  .header-five {
-    min-height: 380px;
-	padding-top: 80px !important;
-  }
-
-  #about .col-md-4,
-  #single-project .col-md-3 {
-    padding-bottom: 32px;
-  }
-
-}
-
-
-@media (max-width: 700px) {
-
-  h1 {
-    font-size: 1.3rem;
-  }
-  h3 {
-    font-size: 13px;
-    letter-spacing: 3px;
-  }
-
-  .filter-wrapper {
-    padding: 0px;
-  }
-
-  #contact {
-    padding-bottom: 4rem;
-  }
-
-  #contact .col-md-4 {
-    padding: 32px 20px 22px 62px;
-  }
-  .contact-submit {
-	width: 70%;
-  }
-
-}
-
-@media (max-width: 450px) {
-  .intro-inner {top: 50%;}
-}

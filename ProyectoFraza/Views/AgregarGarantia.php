@@ -134,7 +134,7 @@ $nombreCliente = $crud->getData("SELECT id_cliente, nombre_cliente, apellido_cli
       <div>
 
         <div>
-       <h3>Datos de Maquinaria: </h3>
+       <h3 id="datos">Datos de Maquinaria: </h3>
      </div>
      <div>
          <input type="text" class="textbox" id="txt_modelo" name="txt_modelo" placeholder="Modelo" />

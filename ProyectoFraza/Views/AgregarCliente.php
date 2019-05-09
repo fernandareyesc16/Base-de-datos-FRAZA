@@ -34,6 +34,8 @@ http://www.tooplate.com/view/2082-pure-mix
 	<!-- Main CSS
    ================================================== -->
 	<link rel="stylesheet" href="/ProyectoFraza/Views/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+
 
 	<!-- Google web font
    ================================================== -->
@@ -129,18 +131,20 @@ http://www.tooplate.com/view/2082-pure-mix
      <form name='form' method='post' id="agregarCliente">
 
      </div>
-      <div>
-         <p id="p1"> Nombre:</p><input type="text" class="textbox" id="txt_nombre" name="txt_nombre" placeholder="Nombre" required/>
-         <p id="p1"> Apellidos:</p><input type="text" class="textbox" id="txt_apellido" name="txt_apellido" placeholder="Apellidos" required/>
-      
-      <div>
-         <p> Correo:</p><input type="text" class="textbox" id="txt_correo" name="txt_correo" placeholder="Correo" />
+               <p id="p1"> Nombre:</p><input type="text" class="textbox" id="txt_nombreA" name="txt_nombre" placeholder="Nombre" required/>
+
+
+         <div>
+         <p id="p1"> Apellidos:</p><input type="text" class="textbox" id="txt_apellidoA" name="txt_apellido" placeholder="Apellidos" required/>
       </div>
       <div>
-          <p> Dirección:</p><input type="text" class="textbox" id="txt_direccion" name="txt_direccion" placeholder="Dirección" />
+         <p> Correo:</p><input type="text" class="textbox" id="txt_correoA" name="txt_correo" placeholder="Correo" />
       </div>
       <div>
-         <p> Teléfono:</p><input type="text" class="textbox" id="txt_telefono" name="txt_telefono" placeholder="Teléfono" />
+          <p> Dirección:</p><input type="text" class="textbox" id="txt_direccionA" name="txt_direccion" placeholder="Dirección" />
+      </div>
+      <div>
+         <p> Teléfono:</p><input type="text" class="textbox" id="txt_telefonoA" name="txt_telefono" placeholder="Teléfono" />
       </div>
       <div>
           <input id="btn_agregar"type="submit" name="but_submit" value = "Agregar" />

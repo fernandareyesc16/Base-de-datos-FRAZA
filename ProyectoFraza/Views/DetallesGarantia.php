@@ -106,13 +106,16 @@ http://www.tooplate.com/view/2082-pure-mix
 		<div class="row">
 
 			<div class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
-            	<div class="header-thumb">
+            	<div class="header-thumbD">
               		 <h1 class="wow fadeIn" data-wow-delay="0.6s" id="garantia" >Detalles garantía, Garantía <?php echo $modelo, " ",  $marca, " ", $numSerie; ?></h1>
 
 
            		</div>
 			</div>
-
+      <?php
+      echo '<form name="form" method="post" action ="../Views/UsarGarantia.php?id_garantia=' . $id_garantia . '">
+        <input type="submit" name="Agregar" value="Agregar fase" id="agregar-clientes"></form></td>';
+    ?>
 		</div>
 	</div>
 </section>
@@ -184,8 +187,7 @@ $crud = new Crud();
 
         }
 
-				echo '<form name="form" method="post" action ="../Views/UsarGarantia.php?id_garantia=' . $id_garantia . '">
-				<input type="submit" name="Agregar" value="Agregar fase" id="btn_agr"></form></td>';
+				
           ?>
 
 
